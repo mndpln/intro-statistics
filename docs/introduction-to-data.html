@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Unit 1 Introduction to Data | An Introduction to Statistics</title>
+  <meta name="description" content="Unit 1 Introduction to Data | An Introduction to Statistics" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Unit 1 Introduction to Data | An Introduction to Statistics" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="mndpln/intro-statistics" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Unit 1 Introduction to Data | An Introduction to Statistics" />
+  
+  
+  
+
+<meta name="author" content="Mariefel Nicole Deypalan" />
+
+
+<meta name="date" content="2021-04-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="probability-and-probability-distributions.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="lib/css/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="lib/css/style.css" type="text/css" />
+<link rel="stylesheet" href="lib/css/lesson.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">An Introduction to Statistics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-data.html"><a href="introduction-to-data.html"><i class="fa fa-check"></i><b>1</b> Introduction to Data</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-data.html"><a href="introduction-to-data.html#what-is-data"><i class="fa fa-check"></i><b>1.1</b> What is Data?</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-data.html"><a href="introduction-to-data.html#types-of-data"><i class="fa fa-check"></i><b>1.2</b> Types of Data</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction-to-data.html"><a href="introduction-to-data.html#homework-1"><i class="fa fa-check"></i><b>1.3</b> Homework 1</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction-to-data.html"><a href="introduction-to-data.html#measures-of-central-tendencymct-wiki"><i class="fa fa-check"></i><b>1.4</b> Measures of Central Tendency</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction-to-data.html"><a href="introduction-to-data.html#measures-of-variability"><i class="fa fa-check"></i><b>1.5</b> Measures of Variability</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction-to-data.html"><a href="introduction-to-data.html#examining-numerical-data"><i class="fa fa-check"></i><b>1.6</b> Examining Numerical Data</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction-to-data.html"><a href="introduction-to-data.html#numerical-methods"><i class="fa fa-check"></i><b>1.6.1</b> Numerical Methods</a></li>
+<li class="chapter" data-level="1.6.2" data-path="introduction-to-data.html"><a href="introduction-to-data.html#graphical-methods"><i class="fa fa-check"></i><b>1.6.2</b> Graphical Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction-to-data.html"><a href="introduction-to-data.html#examining-categorical-data"><i class="fa fa-check"></i><b>1.7</b> Examining Categorical Data</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="introduction-to-data.html"><a href="introduction-to-data.html#tabular-methods"><i class="fa fa-check"></i><b>1.7.1</b> Tabular Methods</a></li>
+<li class="chapter" data-level="1.7.2" data-path="introduction-to-data.html"><a href="introduction-to-data.html#graphical-methods-1"><i class="fa fa-check"></i><b>1.7.2</b> Graphical Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="introduction-to-data.html"><a href="introduction-to-data.html#prelude-some-number-theory"><i class="fa fa-check"></i><b>1.8</b> Prelude: Some Number Theory</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="introduction-to-data.html"><a href="introduction-to-data.html#the-factorial"><i class="fa fa-check"></i><b>1.8.1</b> The Factorial</a></li>
+<li class="chapter" data-level="1.8.2" data-path="introduction-to-data.html"><a href="introduction-to-data.html#combinations"><i class="fa fa-check"></i><b>1.8.2</b> Combinations</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="introduction-to-data.html"><a href="introduction-to-data.html#references"><i class="fa fa-check"></i><b>1.9</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html"><i class="fa fa-check"></i><b>2</b> Probability and Probability Distributions</a><ul>
+<li class="chapter" data-level="2.1" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#defining-probability"><i class="fa fa-check"></i><b>2.1</b> Defining Probability</a></li>
+<li class="chapter" data-level="2.2" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#homework-1-1"><i class="fa fa-check"></i><b>2.2</b> Homework 1</a></li>
+<li class="chapter" data-level="2.3" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#independence"><i class="fa fa-check"></i><b>2.3</b> Independence</a></li>
+<li class="chapter" data-level="2.4" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#random-variables"><i class="fa fa-check"></i><b>2.4</b> Random Variables</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#discrete-and-continuous"><i class="fa fa-check"></i><b>2.4.1</b> Discrete and Continuous</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#homework-2"><i class="fa fa-check"></i><b>2.5</b> Homework 2</a></li>
+<li class="chapter" data-level="2.6" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#the-uniform-distribution"><i class="fa fa-check"></i><b>2.6</b> The Uniform Distribution</a></li>
+<li class="chapter" data-level="2.7" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#the-binomial-distribution"><i class="fa fa-check"></i><b>2.7</b> The Binomial Distribution</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#bernoulli-trial"><i class="fa fa-check"></i><b>2.7.1</b> Bernoulli Trial</a></li>
+<li class="chapter" data-level="2.7.2" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#pmf-of-a-binomial-distributionma151"><i class="fa fa-check"></i><b>2.7.2</b> PMF of a Binomial Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#homework-3"><i class="fa fa-check"></i><b>2.8</b> Homework 3</a></li>
+<li class="chapter" data-level="2.9" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#references-1"><i class="fa fa-check"></i><b>2.9</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html"><i class="fa fa-check"></i><b>3</b> The Normal Distribution and the Central Limit Theorem</a><ul>
+<li class="chapter" data-level="3.1" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#population-vs.-sample"><i class="fa fa-check"></i><b>3.1</b> Population vs. Sample</a></li>
+<li class="chapter" data-level="3.2" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#the-normal-distribution"><i class="fa fa-check"></i><b>3.2</b> The Normal Distribution</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#pdf-of-a-normal-distribution"><i class="fa fa-check"></i><b>3.2.1</b> PDF of a Normal Distribution</a></li>
+<li class="chapter" data-level="3.2.2" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#the-z-score"><i class="fa fa-check"></i><b>3.2.2</b> The Z-score</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#the-empirical-rule"><i class="fa fa-check"></i><b>3.3</b> The Empirical Rule</a></li>
+<li class="chapter" data-level="3.4" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#the-central-limit-theorem"><i class="fa fa-check"></i><b>3.4</b> The Central Limit Theorem</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#applying-the-cltclt-app"><i class="fa fa-check"></i><b>3.4.1</b> Applying the CLT</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#confidence-intervals"><i class="fa fa-check"></i><b>3.5</b> Confidence Intervals</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#what-are-confidence-intervals"><i class="fa fa-check"></i><b>3.5.1</b> What are confidence intervals?</a></li>
+<li class="chapter" data-level="3.5.2" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#constructing-a-confidence-interval"><i class="fa fa-check"></i><b>3.5.2</b> Constructing a Confidence Interval</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#concluding-remark"><i class="fa fa-check"></i><b>3.6</b> Concluding Remark</a></li>
+<li class="chapter" data-level="3.7" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#references-2"><i class="fa fa-check"></i><b>3.7</b> References</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Introduction to Statistics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction-to-data" class="section level1">
+<h1><span class="header-section-number">Unit 1</span> Introduction to Data</h1>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+    cancel: ["Extension","cancel"],
+    bcancel: ["Extension","cancel"],
+    xcancel: ["Extension","cancel"],
+    cancelto: ["Extension","cancel"]
+  });
+});
+</script>
+<div id="what-is-data" class="section level2">
+<h2><span class="header-section-number">1.1</span> What is Data?</h2>
+<p>Data can be thought of simply as information, a collection of facts. An example would be this Star Wars dataset<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> that will be used for illustrative purposes.</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["height"],"name":[2],"type":["int"],"align":["right"]},{"label":["mass"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["hair_color"],"name":[4],"type":["chr"],"align":["left"]},{"label":["skin_color"],"name":[5],"type":["chr"],"align":["left"]},{"label":["eye_color"],"name":[6],"type":["chr"],"align":["left"]},{"label":["birth_year"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["sex"],"name":[8],"type":["chr"],"align":["left"]},{"label":["gender"],"name":[9],"type":["chr"],"align":["left"]},{"label":["homeworld"],"name":[10],"type":["chr"],"align":["left"]},{"label":["species"],"name":[11],"type":["chr"],"align":["left"]},{"label":["films"],"name":[12],"type":["list"],"align":["right"]},{"label":["vehicles"],"name":[13],"type":["list"],"align":["right"]},{"label":["starships"],"name":[14],"type":["list"],"align":["right"]}],"data":[{"1":"Luke Skywalker","2":"172","3":"77.0","4":"blonde","5":"fair","6":"blue","7":"19.0","8":"male","9":"masculine","10":"Tatooine","11":"Human","12":"<chr [5]>","13":"<chr [2]>","14":"<chr [2]>"},{"1":"C-3PO","2":"167","3":"75.0","4":"NA","5":"gold","6":"yellow","7":"112.0","8":"none","9":"masculine","10":"Tatooine","11":"Droid","12":"<chr [6]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"R2-D2","2":"96","3":"32.0","4":"NA","5":"white, blue","6":"red","7":"33.0","8":"none","9":"masculine","10":"Naboo","11":"Droid","12":"<chr [7]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Darth Vader","2":"202","3":"136.0","4":"none","5":"white","6":"yellow","7":"41.9","8":"male","9":"masculine","10":"Tatooine","11":"Human","12":"<chr [4]>","13":"<chr [0]>","14":"<chr [1]>"},{"1":"Leia Organa","2":"150","3":"49.0","4":"brown","5":"light","6":"brown","7":"19.0","8":"female","9":"feminine","10":"Alderaan","11":"Human","12":"<chr [5]>","13":"<chr [1]>","14":"<chr [0]>"},{"1":"Owen Lars","2":"178","3":"120.0","4":"brown, grey","5":"light","6":"blue","7":"52.0","8":"male","9":"masculine","10":"Tatooine","11":"Human","12":"<chr [3]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Beru Whitesun lars","2":"165","3":"75.0","4":"brown","5":"light","6":"blue","7":"47.0","8":"female","9":"feminine","10":"Tatooine","11":"Human","12":"<chr [3]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"R5-D4","2":"97","3":"32.0","4":"NA","5":"white, red","6":"red","7":"NA","8":"none","9":"masculine","10":"Tatooine","11":"Droid","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Biggs Darklighter","2":"183","3":"84.0","4":"black","5":"light","6":"brown","7":"24.0","8":"male","9":"masculine","10":"Tatooine","11":"Human","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [1]>"},{"1":"Obi-Wan Kenobi","2":"182","3":"77.0","4":"auburn, white","5":"fair","6":"blue-gray","7":"57.0","8":"male","9":"masculine","10":"Stewjon","11":"Human","12":"<chr [6]>","13":"<chr [1]>","14":"<chr [5]>"},{"1":"Anakin Skywalker","2":"188","3":"84.0","4":"blonde","5":"fair","6":"blue","7":"41.9","8":"male","9":"masculine","10":"Tatooine","11":"Human","12":"<chr [3]>","13":"<chr [2]>","14":"<chr [3]>"},{"1":"Wilhuff Tarkin","2":"180","3":"NA","4":"auburn, grey","5":"fair","6":"blue","7":"64.0","8":"male","9":"masculine","10":"Eriadu","11":"Human","12":"<chr [2]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Chewbacca","2":"228","3":"112.0","4":"brown","5":"unknown","6":"blue","7":"200.0","8":"male","9":"masculine","10":"Kashyyyk","11":"Wookiee","12":"<chr [5]>","13":"<chr [1]>","14":"<chr [2]>"},{"1":"Han Solo","2":"180","3":"80.0","4":"brown","5":"fair","6":"brown","7":"29.0","8":"male","9":"masculine","10":"Corellia","11":"Human","12":"<chr [4]>","13":"<chr [0]>","14":"<chr [2]>"},{"1":"Greedo","2":"173","3":"74.0","4":"NA","5":"green","6":"black","7":"44.0","8":"male","9":"masculine","10":"Rodia","11":"Rodian","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Jabba Desilijic Tiure","2":"175","3":"1358.0","4":"NA","5":"green-tan, brown","6":"orange","7":"600.0","8":"hermaphroditic","9":"masculine","10":"Nal Hutta","11":"Hutt","12":"<chr [3]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Wedge Antilles","2":"170","3":"77.0","4":"brown","5":"fair","6":"hazel","7":"21.0","8":"male","9":"masculine","10":"Corellia","11":"Human","12":"<chr [3]>","13":"<chr [1]>","14":"<chr [1]>"},{"1":"Jek Tono Porkins","2":"180","3":"110.0","4":"brown","5":"fair","6":"blue","7":"NA","8":"male","9":"masculine","10":"Bestine IV","11":"Human","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [1]>"},{"1":"Yoda","2":"66","3":"17.0","4":"white","5":"green","6":"brown","7":"896.0","8":"male","9":"masculine","10":"NA","11":"Yoda's species","12":"<chr [5]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Palpatine","2":"170","3":"75.0","4":"grey","5":"pale","6":"yellow","7":"82.0","8":"male","9":"masculine","10":"Naboo","11":"Human","12":"<chr [5]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Boba Fett","2":"183","3":"78.2","4":"black","5":"fair","6":"brown","7":"31.5","8":"male","9":"masculine","10":"Kamino","11":"Human","12":"<chr [3]>","13":"<chr [0]>","14":"<chr [1]>"},{"1":"IG-88","2":"200","3":"140.0","4":"none","5":"metal","6":"red","7":"15.0","8":"none","9":"masculine","10":"NA","11":"Droid","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Bossk","2":"190","3":"113.0","4":"none","5":"green","6":"red","7":"53.0","8":"male","9":"masculine","10":"Trandosha","11":"Trandoshan","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Lando Calrissian","2":"177","3":"79.0","4":"black","5":"dark","6":"brown","7":"31.0","8":"male","9":"masculine","10":"Socorro","11":"Human","12":"<chr [2]>","13":"<chr [0]>","14":"<chr [1]>"},{"1":"Lobot","2":"175","3":"79.0","4":"none","5":"light","6":"blue","7":"37.0","8":"male","9":"masculine","10":"Bespin","11":"Human","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Ackbar","2":"180","3":"83.0","4":"none","5":"brown mottle","6":"orange","7":"41.0","8":"male","9":"masculine","10":"Mon Cala","11":"Mon Calamari","12":"<chr [2]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Mon Mothma","2":"150","3":"NA","4":"auburn","5":"fair","6":"blue","7":"48.0","8":"female","9":"feminine","10":"Chandrila","11":"Human","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Arvel Crynyd","2":"NA","3":"NA","4":"brown","5":"fair","6":"brown","7":"NA","8":"male","9":"masculine","10":"NA","11":"Human","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [1]>"},{"1":"Wicket Systri Warrick","2":"88","3":"20.0","4":"brown","5":"brown","6":"brown","7":"8.0","8":"male","9":"masculine","10":"Endor","11":"Ewok","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Nien Nunb","2":"160","3":"68.0","4":"none","5":"grey","6":"black","7":"NA","8":"male","9":"masculine","10":"Sullust","11":"Sullustan","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [1]>"},{"1":"Qui-Gon Jinn","2":"193","3":"89.0","4":"brown","5":"fair","6":"blue","7":"92.0","8":"male","9":"masculine","10":"NA","11":"Human","12":"<chr [1]>","13":"<chr [1]>","14":"<chr [0]>"},{"1":"Nute Gunray","2":"191","3":"90.0","4":"none","5":"mottled green","6":"red","7":"NA","8":"male","9":"masculine","10":"Cato Neimoidia","11":"Neimodian","12":"<chr [3]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Finis Valorum","2":"170","3":"NA","4":"blonde","5":"fair","6":"blue","7":"91.0","8":"male","9":"masculine","10":"Coruscant","11":"Human","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Jar Jar Binks","2":"196","3":"66.0","4":"none","5":"orange","6":"orange","7":"52.0","8":"male","9":"masculine","10":"Naboo","11":"Gungan","12":"<chr [2]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Roos Tarpals","2":"224","3":"82.0","4":"none","5":"grey","6":"orange","7":"NA","8":"male","9":"masculine","10":"Naboo","11":"Gungan","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Rugor Nass","2":"206","3":"NA","4":"none","5":"green","6":"orange","7":"NA","8":"male","9":"masculine","10":"Naboo","11":"Gungan","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Ric Olié","2":"183","3":"NA","4":"brown","5":"fair","6":"blue","7":"NA","8":"NA","9":"NA","10":"Naboo","11":"NA","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [1]>"},{"1":"Watto","2":"137","3":"NA","4":"black","5":"blue, grey","6":"yellow","7":"NA","8":"male","9":"masculine","10":"Toydaria","11":"Toydarian","12":"<chr [2]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Sebulba","2":"112","3":"40.0","4":"none","5":"grey, red","6":"orange","7":"NA","8":"male","9":"masculine","10":"Malastare","11":"Dug","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Quarsh Panaka","2":"183","3":"NA","4":"black","5":"dark","6":"brown","7":"62.0","8":"NA","9":"NA","10":"Naboo","11":"NA","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Shmi Skywalker","2":"163","3":"NA","4":"black","5":"fair","6":"brown","7":"72.0","8":"female","9":"feminine","10":"Tatooine","11":"Human","12":"<chr [2]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Darth Maul","2":"175","3":"80.0","4":"none","5":"red","6":"yellow","7":"54.0","8":"male","9":"masculine","10":"Dathomir","11":"Zabrak","12":"<chr [1]>","13":"<chr [1]>","14":"<chr [1]>"},{"1":"Bib Fortuna","2":"180","3":"NA","4":"none","5":"pale","6":"pink","7":"NA","8":"male","9":"masculine","10":"Ryloth","11":"Twi'lek","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Ayla Secura","2":"178","3":"55.0","4":"none","5":"blue","6":"hazel","7":"48.0","8":"female","9":"feminine","10":"Ryloth","11":"Twi'lek","12":"<chr [3]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Dud Bolt","2":"94","3":"45.0","4":"none","5":"blue, grey","6":"yellow","7":"NA","8":"male","9":"masculine","10":"Vulpter","11":"Vulptereen","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Gasgano","2":"122","3":"NA","4":"none","5":"white, blue","6":"black","7":"NA","8":"male","9":"masculine","10":"Troiken","11":"Xexto","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Ben Quadinaros","2":"163","3":"65.0","4":"none","5":"grey, green, yellow","6":"orange","7":"NA","8":"male","9":"masculine","10":"Tund","11":"Toong","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Mace Windu","2":"188","3":"84.0","4":"none","5":"dark","6":"brown","7":"72.0","8":"male","9":"masculine","10":"Haruun Kal","11":"Human","12":"<chr [3]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Ki-Adi-Mundi","2":"198","3":"82.0","4":"white","5":"pale","6":"yellow","7":"92.0","8":"male","9":"masculine","10":"Cerea","11":"Cerean","12":"<chr [3]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Kit Fisto","2":"196","3":"87.0","4":"none","5":"green","6":"black","7":"NA","8":"male","9":"masculine","10":"Glee Anselm","11":"Nautolan","12":"<chr [3]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Eeth Koth","2":"171","3":"NA","4":"black","5":"brown","6":"brown","7":"NA","8":"male","9":"masculine","10":"Iridonia","11":"Zabrak","12":"<chr [2]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Adi Gallia","2":"184","3":"50.0","4":"none","5":"dark","6":"blue","7":"NA","8":"female","9":"feminine","10":"Coruscant","11":"Tholothian","12":"<chr [2]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Saesee Tiin","2":"188","3":"NA","4":"none","5":"pale","6":"orange","7":"NA","8":"male","9":"masculine","10":"Iktotch","11":"Iktotchi","12":"<chr [2]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Yarael Poof","2":"264","3":"NA","4":"none","5":"white","6":"yellow","7":"NA","8":"male","9":"masculine","10":"Quermia","11":"Quermian","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Plo Koon","2":"188","3":"80.0","4":"none","5":"orange","6":"black","7":"22.0","8":"male","9":"masculine","10":"Dorin","11":"Kel Dor","12":"<chr [3]>","13":"<chr [0]>","14":"<chr [1]>"},{"1":"Mas Amedda","2":"196","3":"NA","4":"none","5":"blue","6":"blue","7":"NA","8":"male","9":"masculine","10":"Champala","11":"Chagrian","12":"<chr [2]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Gregar Typho","2":"185","3":"85.0","4":"black","5":"dark","6":"brown","7":"NA","8":"male","9":"masculine","10":"Naboo","11":"Human","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [1]>"},{"1":"Cordé","2":"157","3":"NA","4":"brown","5":"light","6":"brown","7":"NA","8":"female","9":"feminine","10":"Naboo","11":"Human","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Cliegg Lars","2":"183","3":"NA","4":"brown","5":"fair","6":"blue","7":"82.0","8":"male","9":"masculine","10":"Tatooine","11":"Human","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Poggle the Lesser","2":"183","3":"80.0","4":"none","5":"green","6":"yellow","7":"NA","8":"male","9":"masculine","10":"Geonosis","11":"Geonosian","12":"<chr [2]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Luminara Unduli","2":"170","3":"56.2","4":"black","5":"yellow","6":"blue","7":"58.0","8":"female","9":"feminine","10":"Mirial","11":"Mirialan","12":"<chr [2]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Barriss Offee","2":"166","3":"50.0","4":"black","5":"yellow","6":"blue","7":"40.0","8":"female","9":"feminine","10":"Mirial","11":"Mirialan","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Dormé","2":"165","3":"NA","4":"brown","5":"light","6":"brown","7":"NA","8":"female","9":"feminine","10":"Naboo","11":"Human","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Dooku","2":"193","3":"80.0","4":"white","5":"fair","6":"brown","7":"102.0","8":"male","9":"masculine","10":"Serenno","11":"Human","12":"<chr [2]>","13":"<chr [1]>","14":"<chr [0]>"},{"1":"Bail Prestor Organa","2":"191","3":"NA","4":"black","5":"tan","6":"brown","7":"67.0","8":"male","9":"masculine","10":"Alderaan","11":"Human","12":"<chr [2]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Jango Fett","2":"183","3":"79.0","4":"black","5":"tan","6":"brown","7":"66.0","8":"male","9":"masculine","10":"Concord Dawn","11":"Human","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Zam Wesell","2":"168","3":"55.0","4":"blonde","5":"fair, green, yellow","6":"yellow","7":"NA","8":"female","9":"feminine","10":"Zolan","11":"Clawdite","12":"<chr [1]>","13":"<chr [1]>","14":"<chr [0]>"},{"1":"Dexter Jettster","2":"198","3":"102.0","4":"none","5":"brown","6":"yellow","7":"NA","8":"male","9":"masculine","10":"Ojom","11":"Besalisk","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Lama Su","2":"229","3":"88.0","4":"none","5":"grey","6":"black","7":"NA","8":"male","9":"masculine","10":"Kamino","11":"Kaminoan","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Taun We","2":"213","3":"NA","4":"none","5":"grey","6":"black","7":"NA","8":"female","9":"feminine","10":"Kamino","11":"Kaminoan","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Jocasta Nu","2":"167","3":"NA","4":"white","5":"fair","6":"blue","7":"NA","8":"female","9":"feminine","10":"Coruscant","11":"Human","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Ratts Tyerell","2":"79","3":"15.0","4":"none","5":"grey, blue","6":"unknown","7":"NA","8":"male","9":"masculine","10":"Aleen Minor","11":"Aleena","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"R4-P17","2":"96","3":"NA","4":"none","5":"silver, red","6":"red, blue","7":"NA","8":"none","9":"feminine","10":"NA","11":"Droid","12":"<chr [2]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Wat Tambor","2":"193","3":"48.0","4":"none","5":"green, grey","6":"unknown","7":"NA","8":"male","9":"masculine","10":"Skako","11":"Skakoan","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"San Hill","2":"191","3":"NA","4":"none","5":"grey","6":"gold","7":"NA","8":"male","9":"masculine","10":"Muunilinst","11":"Muun","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Shaak Ti","2":"178","3":"57.0","4":"none","5":"red, blue, white","6":"black","7":"NA","8":"female","9":"feminine","10":"Shili","11":"Togruta","12":"<chr [2]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Grievous","2":"216","3":"159.0","4":"none","5":"brown, white","6":"green, yellow","7":"NA","8":"male","9":"masculine","10":"Kalee","11":"Kaleesh","12":"<chr [1]>","13":"<chr [1]>","14":"<chr [1]>"},{"1":"Tarfful","2":"234","3":"136.0","4":"brown","5":"brown","6":"blue","7":"NA","8":"male","9":"masculine","10":"Kashyyyk","11":"Wookiee","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Raymus Antilles","2":"188","3":"79.0","4":"brown","5":"light","6":"brown","7":"NA","8":"male","9":"masculine","10":"Alderaan","11":"Human","12":"<chr [2]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Sly Moore","2":"178","3":"48.0","4":"none","5":"pale","6":"white","7":"NA","8":"NA","9":"NA","10":"Umbara","11":"NA","12":"<chr [2]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Tion Medon","2":"206","3":"80.0","4":"none","5":"grey","6":"black","7":"NA","8":"male","9":"masculine","10":"Utapau","11":"Pau'an","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Finn","2":"NA","3":"NA","4":"black","5":"dark","6":"dark","7":"NA","8":"male","9":"masculine","10":"NA","11":"Human","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Rey","2":"NA","3":"NA","4":"brown","5":"light","6":"hazel","7":"NA","8":"female","9":"feminine","10":"NA","11":"Human","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Poe Dameron","2":"NA","3":"NA","4":"brown","5":"light","6":"brown","7":"NA","8":"male","9":"masculine","10":"NA","11":"Human","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [1]>"},{"1":"BB8","2":"NA","3":"NA","4":"none","5":"none","6":"black","7":"NA","8":"none","9":"masculine","10":"NA","11":"Droid","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Captain Phasma","2":"NA","3":"NA","4":"unknown","5":"unknown","6":"unknown","7":"NA","8":"NA","9":"NA","10":"NA","11":"NA","12":"<chr [1]>","13":"<chr [0]>","14":"<chr [0]>"},{"1":"Padmé Amidala","2":"165","3":"45.0","4":"brown","5":"light","6":"brown","7":"46.0","8":"female","9":"feminine","10":"Naboo","11":"Human","12":"<chr [3]>","13":"<chr [0]>","14":"<chr [3]>"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>This is a collection of information about the characters in <em>Star Wars</em> such as height, hair color, and species. Each row is one observation.</p>
+</div>
+<div id="types-of-data" class="section level2">
+<h2><span class="header-section-number">1.2</span> Types of Data</h2>
+<p>In a more technical sense, data is “a set of values of qualitative or quantitative variables about one or more persons or objects”.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> The <strong>Star Wars</strong> dataset will be used to illustrate this concept.</p>
+<p>The dataset contains 14 columns. Each column corresponds to a <strong>variable</strong>. A variable in statistics means an attribute. For example, height and hair color are variables and have a value for each observation.</p>
+<p>Variables may be <strong>quantitative</strong> or <strong>qualitative</strong>. Numerical variables are those that take on quantitative values and represent some kind of measurement. The variable <code>mass</code> is an example of a quantitative variable.</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["mass"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Luke Skywalker","2":"77"},{"1":"C-3PO","2":"75"},{"1":"R2-D2","2":"32"},{"1":"Darth Vader","2":"136"},{"1":"Leia Organa","2":"49"},{"1":"Owen Lars","2":"120"},{"1":"Beru Whitesun lars","2":"75"},{"1":"R5-D4","2":"32"},{"1":"Biggs Darklighter","2":"84"},{"1":"Obi-Wan Kenobi","2":"77"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Categorical variables, on the other hand, have qualitative values. Each value can be thought of as a “category” or label. An example would be <code>eye_color</code> from the Star Wars dataset, which has the following values:</p>
+<pre><code> [1] &quot;blue&quot;          &quot;yellow&quot;        &quot;red&quot;           &quot;brown&quot;        
+ [5] &quot;blue-gray&quot;     &quot;black&quot;         &quot;orange&quot;        &quot;hazel&quot;        
+ [9] &quot;pink&quot;          &quot;unknown&quot;       &quot;red, blue&quot;     &quot;gold&quot;         
+[13] &quot;green, yellow&quot; &quot;white&quot;         &quot;dark&quot;         </code></pre>
+</div>
+<div id="homework-1" class="section level2">
+<h2><span class="header-section-number">1.3</span> Homework 1</h2>
+<p>The Motor Trend Car Road Tests dataset<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles. Classify each variable in this dataset as numerical or categorical.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+mpg
+</th>
+<th style="text-align:right;">
+cyl
+</th>
+<th style="text-align:right;">
+disp
+</th>
+<th style="text-align:right;">
+hp
+</th>
+<th style="text-align:right;">
+drat
+</th>
+<th style="text-align:right;">
+wt
+</th>
+<th style="text-align:right;">
+qsec
+</th>
+<th style="text-align:right;">
+vs
+</th>
+<th style="text-align:right;">
+am
+</th>
+<th style="text-align:right;">
+gear
+</th>
+<th style="text-align:right;">
+carb
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Mazda RX4
+</td>
+<td style="text-align:right;">
+21.0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+160
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+3.90
+</td>
+<td style="text-align:right;">
+2.620
+</td>
+<td style="text-align:right;">
+16.46
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mazda RX4 Wag
+</td>
+<td style="text-align:right;">
+21.0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+160
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+3.90
+</td>
+<td style="text-align:right;">
+2.875
+</td>
+<td style="text-align:right;">
+17.02
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Datsun 710
+</td>
+<td style="text-align:right;">
+22.8
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+108
+</td>
+<td style="text-align:right;">
+93
+</td>
+<td style="text-align:right;">
+3.85
+</td>
+<td style="text-align:right;">
+2.320
+</td>
+<td style="text-align:right;">
+18.61
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hornet 4 Drive
+</td>
+<td style="text-align:right;">
+21.4
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+258
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+3.08
+</td>
+<td style="text-align:right;">
+3.215
+</td>
+<td style="text-align:right;">
+19.44
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hornet Sportabout
+</td>
+<td style="text-align:right;">
+18.7
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+360
+</td>
+<td style="text-align:right;">
+175
+</td>
+<td style="text-align:right;">
+3.15
+</td>
+<td style="text-align:right;">
+3.440
+</td>
+<td style="text-align:right;">
+17.02
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Valiant
+</td>
+<td style="text-align:right;">
+18.1
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+225
+</td>
+<td style="text-align:right;">
+105
+</td>
+<td style="text-align:right;">
+2.76
+</td>
+<td style="text-align:right;">
+3.460
+</td>
+<td style="text-align:right;">
+20.22
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>mpg - Miles/(US) gallon<br />
+</li>
+<li>cyl - Number of cylinders<br />
+</li>
+<li>disp - Displacement (cu.in.)<br />
+</li>
+<li>hp - Gross horsepower<br />
+</li>
+<li>drat - Rear axle ratio<br />
+</li>
+<li>wt - Weight (1000 lbs)<br />
+</li>
+<li>qsec - 1/4 mile time<br />
+</li>
+<li>vs - Engine (0 = V-shaped, 1 = straight)<br />
+</li>
+<li>am - Transmission (0 = automatic, 1 = manual)<br />
+</li>
+<li>gear - Number of forward gears<br />
+</li>
+<li>carb - Number of carburetors</li>
+</ul>
+</div>
+<div id="measures-of-central-tendencymct-wiki" class="section level2">
+<h2><span class="header-section-number">1.4</span> Measures of Central Tendency<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></h2>
+<p>The <strong>mean</strong>, <strong>median</strong>, and <strong>mode</strong> are known as <u>measures of central tendency</u> in statistics and are called such because they represent what is a typical or central value. They can be thought of as “average values”.</p>
+<ul>
+<li>Mean - the sum of all measurements divided by the number of observations in the dataset<br />
+</li>
+<li>Median - the middle value that separates the higher half from the lower half of the dataset<br />
+</li>
+<li>Mode - the most frequent value in the data set</li>
+</ul>
+</div>
+<div id="measures-of-variability" class="section level2">
+<h2><span class="header-section-number">1.5</span> Measures of Variability</h2>
+<p>The <strong>range</strong>, <strong>interquartile range</strong> (IQR), <strong>variance</strong>, and <strong>standard deviation</strong> are known as the measures of variability. They describe how far away observations tend to fall from the center.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></p>
+</div>
+<div id="examining-numerical-data" class="section level2">
+<h2><span class="header-section-number">1.6</span> Examining Numerical Data</h2>
+<div id="numerical-methods" class="section level3">
+<h3><span class="header-section-number">1.6.1</span> Numerical Methods</h3>
+<p>The most common way to explore numerical data <em>numerically</em> is by calculating what are called <strong>summary statistics</strong>. A summary statistic is a quantity that summarizes the data into a single point in order to present information as simply as possible.</p>
+<p>The three measures of central tendency are examples of summary statistics, and there are several others which might be familiar. One common set of summary statistics is known as the <strong>five-point summary</strong>, and is comprised of:</p>
+<ul>
+<li>minimum</li>
+<li>first quartile (25th percentile)<br />
+</li>
+<li>median<br />
+</li>
+<li>third quartile (75th percentile)<br />
+</li>
+<li>maximum</li>
+</ul>
+<p>To illustrate, here is a five-point summary for the mass of the Star Wars characters:</p>
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+  15.00   55.60   79.00   97.31   84.50 1358.00      28 </code></pre>
+<p><br></p>
+<p>The last column labeled <code>NA's</code> gives the number of unknown values. This is not part of the five-point summary, but is a useful addition because it shows how many values were missing. There are 87 observations in the Star Wars dataset, but since 28 values for mass are missing, only 59 values were considered in calculating the five-point summary above.</p>
+</div>
+<div id="graphical-methods" class="section level3">
+<h3><span class="header-section-number">1.6.2</span> Graphical Methods</h3>
+<p>Numerical data can be visualized and examined using different types of graphs. Histograms and boxplots are two of common types of graphs used to visualize numerical variables.</p>
+<p>Below is a <strong>histogram</strong> of the heights of Star Wars characters:</p>
+<p><img src="intro-statistics_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><br></p>
+<p>The horizontal (or x-) axis of the histogram corresponds to the variable of interest. The y-axis displays the counts of observations that fall within each interval or bin. Note that in constructing the histogram, the left boundaries or <em>endpoints</em> are not included. For example, there are 20 characters (tallest bar) with a height greater than 175 cm but not greater than 185 cm. Those with a height of exactly 175 cm are included in the previous bar.</p>
+<p>Histograms show the <strong>distribution</strong> of data. A more technical definition of the term will be introduced later in the course but for now, it would suffice to think of distributions as <em>showing possible values of the data and how often they occur</em><a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>. From the histogram, one can see which values of the variable are more and less likely. In the example, most characters are at least 175 cm in height but are not taller than 185 cm. Also, there are characters who are significantly taller than the rest, as evidenced by the rightmost bar on the graph.</p>
+<p><strong>Boxplots</strong> are another way of graphing numerical data, and they present different information from histograms. Below is a boxplot of the heights of Star Wars characters:</p>
+<p><img src="intro-statistics_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Instead of presenting the frequency of the data, boxplots show the summary statistics presented in the previous section:</p>
+<ul>
+<li><strong>median</strong> - the line in the middle<br />
+</li>
+<li><strong>Q1/first quartile</strong> - left edge of the box<br />
+</li>
+<li><strong>Q3/third quartile</strong> - right edge of the box</li>
+</ul>
+<p>The black points in the plot correspond to <strong>outliers</strong>, which are data points that deviate significantly from the other observations. In the context of this example, the points on the right represent the extremely short characters (like Yoda) while the points on the left are the towering characters (like Yarael Poof).</p>
+</div>
+</div>
+<div id="examining-categorical-data" class="section level2">
+<h2><span class="header-section-number">1.7</span> Examining Categorical Data</h2>
+<div id="tabular-methods" class="section level3">
+<h3><span class="header-section-number">1.7.1</span> Tabular Methods</h3>
+<p>Two types of tables are used most commonly in summarizing categorical data. These are <strong>frequency</strong> tables and <strong>contingency tables</strong>.</p>
+<p><br></p>
+<div id="frequency-tables" class="section level4">
+<h4><span class="header-section-number">1.7.1.1</span> Frequency Tables</h4>
+<p>A frequency table shows “numbers and percentages for each value”<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> of the categorical variable. In effect, it presents the distribution of observations across all possible responses. As an example, here is a frequency table for the <code>hair_color</code> variable in the Star Wars dataset.</p>
+<pre><code>starwars$hair_color : 
+              Frequency   %(NA+)   %(NA-)
+none                 37     42.5     45.1
+brown                18     20.7     22.0
+black                13     14.9     15.9
+&lt;NA&gt;                  5      5.7      0.0
+blonde                4      4.6      4.9
+white                 4      4.6      4.9
+auburn                1      1.1      1.2
+auburn, grey          1      1.1      1.2
+auburn, white         1      1.1      1.2
+brown, grey           1      1.1      1.2
+grey                  1      1.1      1.2
+unknown               1      1.1      1.2
+  Total              87    100.0    100.0</code></pre>
+<p><br></p>
+<p>The percentages displayed are called relative frequencies and are calculated based on the total number of observations. Consider the row for <code>&lt;NA&gt;</code>, which refers to missing values in the data set. The <code>%(NA+)</code> column tells us that 5.7% of the total observations have missing values for hair color. Looking at the <code>%(NA-)</code> column, the percentage is now 0. That is because this column gives percentages relative to the total observations minus the missing values.</p>
+<p><br></p>
+</div>
+<div id="contingency-tables" class="section level4">
+<h4><span class="header-section-number">1.7.1.2</span> Contingency Tables</h4>
+<p>A <strong>contingency table</strong> displays the relationship between one categorical variable and another. It is called such because it allows us to examine whether the values of one variable are contingent (dependent) upon those of another.<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a></p>
+<p>Here is a contingency table for the variables gender and hair color:</p>
+<pre><code>               feminine masculine Sum
+                                     
+auburn                1         0   1
+auburn, grey          0         1   1
+auburn, white         0         1   1
+black                 3         9  12
+blonde                1         3   4
+brown                 6        11  17
+brown, grey           0         1   1
+grey                  0         1   1
+none                  5        31  36
+unknown               0         0   0
+white                 1         3   4
+Sum                  17        61  78</code></pre>
+<p><br></p>
+</div>
+</div>
+<div id="graphical-methods-1" class="section level3">
+<h3><span class="header-section-number">1.7.2</span> Graphical Methods</h3>
+<p>Categorical data can also be presented using graphs. The most common types are <strong>bar charts</strong> and <strong>pie charts</strong>.</p>
+<p><br></p>
+<div id="bar-charts" class="section level4">
+<h4><span class="header-section-number">1.7.2.1</span> Bar Charts</h4>
+<p>Shown here is a bar chart for the hair color of Star Wars characters:</p>
+<p><img src="intro-statistics_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>The bar chart is the equivalent of a histogram for categorical variables. Each bar will correspond to a row in the frequency table from the previous section. Several facts can be deduced from this graph. Most characters in the dataset have no hair but among those that do, the most common hair color is brown.</p>
+<p><br></p>
+</div>
+<div id="exercise" class="section level4">
+<h4><span class="header-section-number">1.7.2.2</span> Exercise:</h4>
+<p>What other facts about the data does this bar chart show? Give at least one.</p>
+<p><br></p>
+</div>
+<div id="pie-chart" class="section level4">
+<h4><span class="header-section-number">1.7.2.3</span> Pie Chart</h4>
+<p>Below is a pie chart for the same variable, hair color, which was presented in the previous sections.</p>
+<p><img src="intro-statistics_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Although pie charts are commonly seen in infographics and posters, it is not considered as a good visualization because there is <strong>no scale</strong> present. The angles of the wedges cannot be compared directly, which makes it difficult to deduce whether one piece of the pie is larger than the other. Comparing this to the bar graph in the previous section, it is easy to see which chart is more effective at conveying information.</p>
+<p>There are several resources online which explain the ineffectiveness of pie charts in much greater detail. An <a href="https://www.businessinsider.com/pie-charts-are-the-worst-2013-6">article</a> in <em>Business Insider</em> explains very well why using a pie chart is a bad visualization technique.</p>
+<p><br></p>
+</div>
+</div>
+</div>
+<div id="prelude-some-number-theory" class="section level2">
+<h2><span class="header-section-number">1.8</span> Prelude: Some Number Theory</h2>
+<p>Digressing from the discussion on data, this section will introduce some basic notations in number theory in preparation for the discussion on probability distributions.</p>
+<div id="the-factorial" class="section level3">
+<h3><span class="header-section-number">1.8.1</span> The Factorial</h3>
+<p>In mathematics, the factorial of a <strong>non-negative</strong> integer <span class="math inline">\(n\)</span>, denoted by <span class="math inline">\(n!\)</span>, is the product of all positive integers less than or equal to <span class="math inline">\(n\)</span>:</p>
+<p><span class="math display">\[n! = n \times (n - 1) \times (n - 2) \times (n - 3) \times \dotsc \times 3 \times 2 \times 1\]</span></p>
+<p>For example, <span class="math inline">\(3!\)</span> is equal to <span class="math inline">\(3 \times 2 \times 1 = 6\)</span>, while <span class="math inline">\(5!\)</span> is <span class="math inline">\(5 \times 4 \times 3 \times 2 \times 1 = 120\)</span>.</p>
+<p>By definition, <span class="math inline">\(0!\)</span> is 1.</p>
+</div>
+<div id="combinations" class="section level3">
+<h3><span class="header-section-number">1.8.2</span> Combinations</h3>
+<p>“A combination is a mathematical technique that determines the number of possible arrangements in a collection of items where the order of the selection does not matter.”<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p>
+<p>Consider a small office with 7 employees. Since the company provides free lunch, a lunch committee consisting of 3 members is needed to decide the weekly menu. How many possible commitees of 3 can be created?</p>
+<p>The above is an example of a combination problem. It is equivalent to counting the number of ways a group of 3 can be chosen from a bigger group of 7. In mathematics, this is denoted as <span class="math inline">\({7 \choose 3}\)</span> and read as 7 choose 3 or more generally, <span class="math inline">\({n \choose k}\)</span> where <span class="math inline">\(n\)</span> is the total number of items and <span class="math inline">\(k\)</span> the number of items to be selected.</p>
+<p>To obtain the value of such an expression, the following formula is used:</p>
+<p><span class="math display">\[{n \choose k} = \frac{n!}{r! (n - r)!}\]</span></p>
+<p>Using this formula, the total number of possible committees is:</p>
+<p><span class="math display">\[
+\begin{align}
+{n \choose k} &amp;= \frac{n!}{r! (n - r)!} \\
+{7 \choose 3} &amp;= \frac{7!}{3! (7 - 3)!} \\
+{7 \choose 3} &amp;= \frac{7!}{3! \cdot 4!} \\
+{7 \choose 3} &amp;= \frac{7 \cdot \cancel{6} \cdot 5 \cdot \cancel{4!}}{\cancel{3!} \cdot \cancel{4!}} = 35
+\end{align}
+\]</span></p>
+<p><strong>Answer:</strong> There are 35 possible ways of selecting a lunch committee of 3 from a group of 7.</p>
+<p><br></p>
+</div>
+</div>
+<div id="references" class="section level2">
+<h2><span class="header-section-number">1.9</span> References</h2>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p><a href="https://www.tidyverse.org/">Tidyverse</a>.<a href="introduction-to-data.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p><a href="https://en.wikipedia.org/wiki/Data">Wikipedia</a>.<a href="introduction-to-data.html#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p><a href="https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars">mtcars</a>.<a href="introduction-to-data.html#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p><a href="https://en.wikipedia.org/wiki/Central_tendency">Central tendency</a>.<a href="introduction-to-data.html#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p><a href="https://statisticsbyjim.com/basics/variability-range-interquartile-variance-standard-deviation">Measures of Variability</a>.<a href="introduction-to-data.html#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p><a href="https://365datascience.com/tutorials/statistics-tutorials/distribution-in-statistics/">365 Data Science.</a><a href="introduction-to-data.html#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn7"><p><a href="https://course.oeru.org/research-methods/modules-4-6/module-4-quantitative-methods/statistics-presenting-categorical-data/">Statistics: Presenting Categorical Data</a><a href="introduction-to-data.html#fnref7" class="footnote-back">↩</a></p></li>
+<li id="fn8"><p><a href="https://course.oeru.org/research-methods/modules-4-6/module-4-quantitative-methods/statistics-presenting-categorical-data/">Statistics: Presenting Categorical Data</a><a href="introduction-to-data.html#fnref8" class="footnote-back">↩</a></p></li>
+<li id="fn9"><p><a href="https://corporatefinanceinstitute.com/resources/knowledge/other/combination/">Combinations</a>.<a href="introduction-to-data.html#fnref9" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="probability-and-probability-distributions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

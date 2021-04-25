@@ -1,0 +1,200 @@
+---
+title: "An Introduction to Statistics"
+author: "Mariefel Nicole Deypalan"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+site: bookdown::bookdown_site
+documentclass: book
+output:
+  bookdown::gitbook:
+    df_print: paged
+github-repo: mndpln/intro-statistics
+---
+
+# The Normal Distribution and the Central Limit Theorem  
+
+## Population vs. Sample  
+
+**Population** - all the elements from a set of data[^stattrek]  
+**Sample** - one or more observations taken from the population  
+
+A quantity taken for the entire population is known as a population **parameter**, while that taken for a sample is called a **sample statistic**.  
+
+<br>
+
+**Sampling distribution**  
+
+* "The sampling distribution of a statistic is a probability distribution based on a large number of samples of size $n$ from a given population."[^psu-4]  
+
+This means that...
+
+* The sampling distribution is a probability distribution.  
+* From the population, many samples of the same size are taken and a statistic (e.g mean, proportion) is taken for each sample.  
+* Using the values of the statistic that were calculated from the samples, a distribution is then obtained.  
+
+<br>
+
+**Standard Error**  
+
+* The measure of the variability of the sample means  
+* $SE = \frac{\sigma}{\sqrt{n}}$, $\sigma$ is the population standard deviation  
+
+<br>
+
+## The Normal Distribution  
+
+The normal distribution is the most common among all probability distributions, perhaps because it describes a lot of variables quite well. According to an introductory statistics book, "Many variables are nearly normal, but none are exactly normal. Thus the normal distribution, while not perfect for any single problem, is very useful for a variety of problems."[^open-int]  
+
+The normal distribution is bell-shaped. It is symmetric and unimodal; it has one peak and tapers off at both ends in exactly the same way. Below is an example of a normal distribution with a mean of 2 and a standard deviation of 1.    
+
+```{r}
+z <- seq(-1, 5, b = 0.1)
+plot(
+  z,
+  dnorm(z, mean = 2, sd = 1),
+  type = 'l',
+  lwd = 3,
+  ylab = "density",
+  axes = FALSE,
+  main = 'Normal Distribution, mean = 2, sd = 1'
+)
+box(bty = "l")
+axis(2)
+axis(1)
+```
+
+<br>
+
+Two parameters are used to describe the normal distribution - mean $\mu$ and standard deviation $\sigma$. A mean of 0 and a standard deviation of 1 corresponds to the standard normal distribution which is shown below:  
+
+```{r}
+z <- seq(-3, 3, length = 100)
+plot(
+  z,
+  dnorm(z),
+  type = 'l',
+  lwd = 3,
+  ylab = "density",
+  axes = FALSE,
+  main = 'Standard Normal Distribution)'
+)
+box(bty = "l")
+axis(2)
+axis(1)
+```
+
+<br>
+
+### PDF of a Normal Distribution  
+
+The normal distribution is continuous, i.e. a normally distributed random variable can take on any value between $(-\infty, +\infty)$. The continuous analog of pmfs are pdfs or **probability density functions** and thus, the pdf for the normal distribution is:  
+
+$$f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}}\exp{\left[-\frac{1}{2} \cdot \left( \frac{x - \mu}{\sigma}\right)^2\right]}$$
+
+<br>
+
+### The Z-score  
+
+* measures how many standard deviations above or below the mean a data point is  
+
+Formula for the **z-score**:  
+
+$$z = \frac{x-\mu}{\sigma}$$
+
+The above equation looks like the last part of the normal pdf. Substituting this expression for z yields:  
+
+$$f(z) = \frac{1}{\sqrt{2 \pi \sigma^2}}\exp{\left[-\frac{1}{2} \cdot z^2\right]}$$
+
+This is the equation for the **standard normal distribution**.  
+
+These equations are rarely used to compute probabilities because various software have made these available through the use of functions. For example, the Excel function `NORMDIST()`[^cfi-norm] gives the exact value of the pdf for any normal distribution specified by a mean and standard deviation. However, introducing these concepts is still important to justify the robustness of the statistical tools that will be discussed later on. Knowing these fundamental concepts allows one to confidently use and interpret the results of many different methods such as hypothesis testing, linear regression, etc.  
+
+<br>
+
+## The Empirical Rule  
+
+Another useful property of normally distributed data is given by the **empirical rule**. Given that the distribution of the data is bell-shaped, this rule states that:  
+
+* Approximately 68\% of the data lie within 1 standard deviation from the mean  
+* Approximately 95\% of the data, 2 standard deviations  
+* About 99.7\% of the data, 3 standard deviations  
+
+```{r, fig.cap="The Empirical Rule", out.width='75%'}
+knitr::include_graphics("empirical-rule.jpg")
+```
+
+<br>
+
+## The Central Limit Theorem  
+
+The Central Limit Theorem (CLT) states that for a population with mean $\mu$ and standard deviation $\sigma$, taking sufficiently large random samples with replacement and computing sample means will yield a distribution of sample means that is approximately normal.[^boston-clt]  
+
+The CLT holds true provided that the following conditions are met:  
+
+1. **Independence**: The sampled observations must be independent.  
+2. **Sample size/skew**: If the population is skewed, the sample size $n$ must be greater than 3. If not, the population distribution must be normal.   
+
+<br>
+
+### Applying the CLT[^clt-app]  
+
+<div class="prob">
+Suppose my iPod has 3,000 songs. I know that the distribution of lengths of these songs is right-skewed, and for this iPod, the mean length is 3.45 minutes and the standard deviation is 1.63 minutes.  
+
+I'm about to take a trip to visit my parents and the drive is 6 hours. I make a random playlist of 100 songs. What is the probability that my playlist lasts the entire drive?  
+</div>
+
+<br>
+
+Given:  
+
+* $\mu$ = 3.45 minutes  
+* $\sigma$ = 1.63 minutes  
+* 6 hours = 360 minutes  
+
+Find:  
+
+* probability that 100 *randomly* selected songs lasts 360 minutes, which is the same as  
+* probability that the average length of the 100 *randomly* selected songs is at least $360/100 = 3.6$ minutes  
+* $P(\overline{X} \geq 3.6)$  
+
+According to the CLT:  
+
+$$\overline{X} \sim N(\mu = 3.45, ~ \text{SE} = \frac{1.63}{100} = 0.163)$$  
+
+$$Z = \frac{x - \mu}{\sigma} = \frac{3.6 - 3.45}{0.163} = 0.92$$  
+
+$$P(Z \geq 0.92) = 0.1788$$
+
+<br>
+
+## Confidence Intervals    
+
+### What are confidence intervals?    
+
+Confidence intervals give us a range of plausible values for the population parameter based on results from a sample. The conditions for the CLT must also be met for the confidence interval to be valid.  
+
+### Constructing a Confidence Interval  
+
+The confidence interval **for the mean** is computed as:  
+
+$$(\overline{x} - z^* \frac{s}{\sqrt{n}}, ~ \overline{x} + z^* \frac{s}{\sqrt{n}})$$
+
+* $\overline{x}$ is the sample mean  
+* $s$ is the sample mean  
+* $n$ is the sample size  
+* $z^*$ is the critical z-score  
+
+<br>
+
+## Concluding Remark  
+
+This unit has introduced one of the most important theorems in statistics and in doing so, has inevitably scratched the surface of one of the most fundamental inferential methods - **hypothesis testing**. The next unit will more formally introduce the rudiments of hypothesis testing - from setting up hypotheses to selecting the appropriate confidence level. After establishing the fundamental definitions, applications and examples will be presented which will hopefully solidify the previous discussions. The normal distribution will be re-introduced and in the context of hypothesis testing, its ubiquity in the realm of inferential statistics will be more apparent.  
+
+<br>
+
+## References  
+
+[^psu-4]: <a href="https://online.stat.psu.edu/stat500/lesson/4">Sampling Distributions</a>.  
+[^stattrek]: <a href="https://stattrek.com/sampling/populations-and-samples.aspx">Populations and Samples</a>.  
+[^boston-clt]: <a href="https://sphweb.bumc.bu.edu/otlt/mph-modules/bs/bs704_probability/BS704_Probability12.html">Central Limit Theorem</a>.  
+[^clt-app]: Inferential Statistics, Coursera.  

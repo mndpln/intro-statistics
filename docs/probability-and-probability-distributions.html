@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Unit 2 Probability and Probability Distributions | An Introduction to Statistics</title>
+  <meta name="description" content="Unit 2 Probability and Probability Distributions | An Introduction to Statistics" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Unit 2 Probability and Probability Distributions | An Introduction to Statistics" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="mndpln/intro-statistics" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Unit 2 Probability and Probability Distributions | An Introduction to Statistics" />
+  
+  
+  
+
+<meta name="author" content="Mariefel Nicole Deypalan" />
+
+
+<meta name="date" content="2021-04-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction-to-data.html"/>
+<link rel="next" href="the-normal-distribution-and-the-central-limit-theorem.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="lib/css/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="lib/css/style.css" type="text/css" />
+<link rel="stylesheet" href="lib/css/lesson.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">An Introduction to Statistics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-data.html"><a href="introduction-to-data.html"><i class="fa fa-check"></i><b>1</b> Introduction to Data</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-data.html"><a href="introduction-to-data.html#what-is-data"><i class="fa fa-check"></i><b>1.1</b> What is Data?</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-data.html"><a href="introduction-to-data.html#types-of-data"><i class="fa fa-check"></i><b>1.2</b> Types of Data</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction-to-data.html"><a href="introduction-to-data.html#homework-1"><i class="fa fa-check"></i><b>1.3</b> Homework 1</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction-to-data.html"><a href="introduction-to-data.html#measures-of-central-tendencymct-wiki"><i class="fa fa-check"></i><b>1.4</b> Measures of Central Tendency</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction-to-data.html"><a href="introduction-to-data.html#measures-of-variability"><i class="fa fa-check"></i><b>1.5</b> Measures of Variability</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction-to-data.html"><a href="introduction-to-data.html#examining-numerical-data"><i class="fa fa-check"></i><b>1.6</b> Examining Numerical Data</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction-to-data.html"><a href="introduction-to-data.html#numerical-methods"><i class="fa fa-check"></i><b>1.6.1</b> Numerical Methods</a></li>
+<li class="chapter" data-level="1.6.2" data-path="introduction-to-data.html"><a href="introduction-to-data.html#graphical-methods"><i class="fa fa-check"></i><b>1.6.2</b> Graphical Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction-to-data.html"><a href="introduction-to-data.html#examining-categorical-data"><i class="fa fa-check"></i><b>1.7</b> Examining Categorical Data</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="introduction-to-data.html"><a href="introduction-to-data.html#tabular-methods"><i class="fa fa-check"></i><b>1.7.1</b> Tabular Methods</a></li>
+<li class="chapter" data-level="1.7.2" data-path="introduction-to-data.html"><a href="introduction-to-data.html#graphical-methods-1"><i class="fa fa-check"></i><b>1.7.2</b> Graphical Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="introduction-to-data.html"><a href="introduction-to-data.html#prelude-some-number-theory"><i class="fa fa-check"></i><b>1.8</b> Prelude: Some Number Theory</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="introduction-to-data.html"><a href="introduction-to-data.html#the-factorial"><i class="fa fa-check"></i><b>1.8.1</b> The Factorial</a></li>
+<li class="chapter" data-level="1.8.2" data-path="introduction-to-data.html"><a href="introduction-to-data.html#combinations"><i class="fa fa-check"></i><b>1.8.2</b> Combinations</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="introduction-to-data.html"><a href="introduction-to-data.html#references"><i class="fa fa-check"></i><b>1.9</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html"><i class="fa fa-check"></i><b>2</b> Probability and Probability Distributions</a><ul>
+<li class="chapter" data-level="2.1" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#defining-probability"><i class="fa fa-check"></i><b>2.1</b> Defining Probability</a></li>
+<li class="chapter" data-level="2.2" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#homework-1-1"><i class="fa fa-check"></i><b>2.2</b> Homework 1</a></li>
+<li class="chapter" data-level="2.3" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#independence"><i class="fa fa-check"></i><b>2.3</b> Independence</a></li>
+<li class="chapter" data-level="2.4" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#random-variables"><i class="fa fa-check"></i><b>2.4</b> Random Variables</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#discrete-and-continuous"><i class="fa fa-check"></i><b>2.4.1</b> Discrete and Continuous</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#homework-2"><i class="fa fa-check"></i><b>2.5</b> Homework 2</a></li>
+<li class="chapter" data-level="2.6" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#the-uniform-distribution"><i class="fa fa-check"></i><b>2.6</b> The Uniform Distribution</a></li>
+<li class="chapter" data-level="2.7" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#the-binomial-distribution"><i class="fa fa-check"></i><b>2.7</b> The Binomial Distribution</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#bernoulli-trial"><i class="fa fa-check"></i><b>2.7.1</b> Bernoulli Trial</a></li>
+<li class="chapter" data-level="2.7.2" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#pmf-of-a-binomial-distributionma151"><i class="fa fa-check"></i><b>2.7.2</b> PMF of a Binomial Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#homework-3"><i class="fa fa-check"></i><b>2.8</b> Homework 3</a></li>
+<li class="chapter" data-level="2.9" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#references-1"><i class="fa fa-check"></i><b>2.9</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html"><i class="fa fa-check"></i><b>3</b> The Normal Distribution and the Central Limit Theorem</a><ul>
+<li class="chapter" data-level="3.1" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#population-vs.-sample"><i class="fa fa-check"></i><b>3.1</b> Population vs. Sample</a></li>
+<li class="chapter" data-level="3.2" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#the-normal-distribution"><i class="fa fa-check"></i><b>3.2</b> The Normal Distribution</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#pdf-of-a-normal-distribution"><i class="fa fa-check"></i><b>3.2.1</b> PDF of a Normal Distribution</a></li>
+<li class="chapter" data-level="3.2.2" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#the-z-score"><i class="fa fa-check"></i><b>3.2.2</b> The Z-score</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#the-empirical-rule"><i class="fa fa-check"></i><b>3.3</b> The Empirical Rule</a></li>
+<li class="chapter" data-level="3.4" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#the-central-limit-theorem"><i class="fa fa-check"></i><b>3.4</b> The Central Limit Theorem</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#applying-the-cltclt-app"><i class="fa fa-check"></i><b>3.4.1</b> Applying the CLT</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#confidence-intervals"><i class="fa fa-check"></i><b>3.5</b> Confidence Intervals</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#what-are-confidence-intervals"><i class="fa fa-check"></i><b>3.5.1</b> What are confidence intervals?</a></li>
+<li class="chapter" data-level="3.5.2" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#constructing-a-confidence-interval"><i class="fa fa-check"></i><b>3.5.2</b> Constructing a Confidence Interval</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#concluding-remark"><i class="fa fa-check"></i><b>3.6</b> Concluding Remark</a></li>
+<li class="chapter" data-level="3.7" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#references-2"><i class="fa fa-check"></i><b>3.7</b> References</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Introduction to Statistics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="probability-and-probability-distributions" class="section level1">
+<h1><span class="header-section-number">Unit 2</span> Probability and Probability Distributions</h1>
+<div id="defining-probability" class="section level2">
+<h2><span class="header-section-number">2.1</span> Defining Probability</h2>
+<p><strong>Probability</strong></p>
+<ul>
+<li>The measure of how likely something is to occur</li>
+</ul>
+<p><br></p>
+<p>To begin talking about this topic, three definitions will be introduced:</p>
+<ul>
+<li><strong>experiment</strong> - “any process, real or hypothetical, in which the possible outcomes can be identified ahead of time”<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a><br />
+</li>
+<li><strong>event</strong> - “a well-defined set of possible outcomes of the experiment”<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a><br />
+</li>
+<li><strong>sample space</strong> - a collection or a set of possible outcomes or results of a random experiment</li>
+</ul>
+<p><br></p>
+<p>The simplest way of calculating the probability that an event <span class="math inline">\(E\)</span> occurs is:</p>
+<p><span class="math display">\[P(E) = \frac{\text{number of desired outcomes}}{\text{total possible outcomes}}\]</span></p>
+<p><br></p>
+</div>
+<div id="homework-1-1" class="section level2">
+<h2><span class="header-section-number">2.2</span> Homework 1</h2>
+<p>The concept of probability can be better illustrated through examples. Below are some situations where probability is of interest. For each example, identify the experiment, the event and calculate the probability.</p>
+<ol style="list-style-type: decimal">
+<li>What is the probability that a coin toss comes up heads?<br />
+</li>
+<li>When a die is rolled, what is the probability of getting an even number?<br />
+</li>
+<li>When two dice are rolled, what is the probability of rolling a double?<br />
+</li>
+<li>In a standard deck of 52 cards, what is the probability of drawing a face card?<br />
+</li>
+<li>In a drawer containing 3 pairs of black socks and 4 pairs of white socks, what is the probability of drawing a black pair?</li>
+</ol>
+</div>
+<div id="independence" class="section level2">
+<h2><span class="header-section-number">2.3</span> Independence</h2>
+<p>In talking about probability, independence is a term that often comes up. In statistics, two <em>events</em> <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are said to be independent “if the occurrence of one does not affect the probability of occurrence of the other”<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>.</p>
+<p>Here are some examples of independent events:</p>
+<ul>
+<li>Flipping a fair coin and rolling a die<br />
+</li>
+<li>Drawing a card from a deck, putting it back, and drawing another card</li>
+</ul>
+<p>Another related concept is that of <strong>disjoint events</strong>. Disjoint, or <strong>mutually exclusive</strong> events, are events that cannot occur at the same time. If two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are disjoint, the occurrence of <span class="math inline">\(A\)</span> means that <span class="math inline">\(B\)</span> cannot occur and vice versa.</p>
+<p>Examples:</p>
+<ul>
+<li>Getting both heads and tails in <em>one</em> coin flip<br />
+</li>
+<li>Having one pet that is both a dog and a bird (considering only real species)</li>
+</ul>
+</div>
+<div id="random-variables" class="section level2">
+<h2><span class="header-section-number">2.4</span> Random Variables</h2>
+<p>Random variables are very important building blocks of probability theory, but this course only requires an informal definition. Here and in the next chapters, mathematical underpinnings have been excluded where permissible to keep the content easily understandable.</p>
+<p><strong>What is a random variable?</strong> It is a variable whose values depend on the outcome of some experiment.<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> This informal definition combines two important terms previously introduced - <strong>variable</strong> and <strong>experiment</strong>. In statistical equations, random variables are typically represented by capital letters.</p>
+<p>Random variables are best described by <strong>probability distributions</strong>. Again, building off of previously defined terms, probability distributions are, simply put, distributions of probability. More precisely, a probability distribution is a “<strong>mathematical function</strong> that gives the probabilities of occurrence of different possible outcomes for an experiment”<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>.</p>
+<div id="discrete-and-continuous" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> Discrete and Continuous</h3>
+<p>Random variables can either be <strong>discrete</strong> or <strong>continuous</strong>. This classification pertains to the types of values a random variable can take. <u>Discrete random variables</u> are those that have distinct, countable values. <u>Continuous random variables</u>, on the other hand, take on any value within an interval, i.e. infinitely many values. As with everything else, this can be better understood with examples. Below is an exercise that will require the application of the conceptual definitions stated above.</p>
+</div>
+</div>
+<div id="homework-2" class="section level2">
+<h2><span class="header-section-number">2.5</span> Homework 2</h2>
+<p>Classify each random variable as discrete or continuous.</p>
+<ul>
+<li><span class="math inline">\(X\)</span>, a random variable that has a value of 1 if a coin toss comes up heads, 0 otherwise<br />
+</li>
+<li>A random variable <span class="math inline">\(Y\)</span> which takes on the number of times an even number comes up in 10 rolls of a die<br />
+</li>
+<li>A random variable <span class="math inline">\(C\)</span> which is the exact temperature in a certain room at 10:20:00 AM<br />
+</li>
+<li><span class="math inline">\(M\)</span>, the exact mass of a randomly selected person in the class<br />
+</li>
+<li><span class="math inline">\(K\)</span>, the mass of a randomly selected person in a mall rounded to the nearest gram</li>
+</ul>
+</div>
+<div id="the-uniform-distribution" class="section level2">
+<h2><span class="header-section-number">2.6</span> The Uniform Distribution</h2>
+<p>The uniform distribution has two forms - discrete and continuous. As the name implies, the uniform distribution describes an experiment where all possible outcomes in the sample space are equally likely to occur.</p>
+<p>To differentiate between the discrete uniform and continuous uniform distributions, it is important to look at what kind of experiment is generating the data and what kind of values are possible given that process.</p>
+<p>Suppose we are drawing a random card from a deck of 52. This is a discrete process because we can count the number of possible outcomes. Since each card has an equal chance of being drawn, a random variable <span class="math inline">\(R\)</span> corresponding to the card that will be drawn is <em>uniformly distributed</em>, with pmf given by:</p>
+<p><span class="math display">\[p(x) = \frac{1}{N}, \hspace{10mm} N = 1, 2, 3, \dotsc\]</span></p>
+<p><span class="math inline">\(N\)</span> is the total number of possible outcomes.</p>
+<p>The continuous uniform distribution, on the other hand, can be illustrated by considering an interval on the number line, say <span class="math inline">\((1,5)\)</span>. consider a random variable <span class="math inline">\(B\)</span> that is uniformly distributed in this interval. This means that <span class="math inline">\(B\)</span> is equally likely to take on any value between 1 and 5. (Here, “any value” includes fractions and irrational numbers.)</p>
+<p>The pdf of the continuous uniform distribution is given by</p>
+<p><span class="math display">\[f(x) = \frac{1}{b - a}, \hspace{10mm} a &lt; x &lt; b\]</span></p>
+<p>where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are the bounds of the interval. Note that the equation above is not dependent on <span class="math inline">\(x\)</span>, i.e. regardless of the value of the random variable, the probability will be the same. When a random variable is uniformly distributed across an interval, each and every value in the interval is equally likely to occur. In the example, every number in the interval <span class="math inline">\((1, 5)\)</span> has a <span class="math inline">\(\frac{1}{4}\)</span> chance of occurring.</p>
+<p>Suppose a number is selected at random from this interval. What is the probability that the number chosen will be between 2 and 4?</p>
+<p><span class="math display">\[
+\begin{align}
+P(E) &amp;= (j - i) \cdot \frac{1}{b-a}, \hspace{10mm} i,j \text{ are the bounds of the desired interval} \\
+&amp;= (4 - 2) \cdot \frac{1}{5 - 1} \\
+&amp;= 2 \cdot \frac{1}{4} = \frac{1}{2}
+\end{align}
+\]</span></p>
+<p><br></p>
+</div>
+<div id="the-binomial-distribution" class="section level2">
+<h2><span class="header-section-number">2.7</span> The Binomial Distribution</h2>
+<div id="bernoulli-trial" class="section level3">
+<h3><span class="header-section-number">2.7.1</span> Bernoulli Trial</h3>
+<p>A Bernoulli trial is an experiment that has only two possible outcomes - <em>success</em> and <em>failure</em>. A success is denoted by 1 and a failure by 0. Let <span class="math inline">\(\pi\)</span> be the probability of success, <span class="math inline">\(0 &lt; \pi &lt; 1\)</span>.</p>
+<p>This is perhaps the simplest experiment<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a>, but gives rise to an entire family of discrete distributions. Of these, the most common is the <strong>BINOMIAL DISTRIBUTION</strong> whose <em>probability mass function</em> is introduced below.</p>
+</div>
+<div id="pmf-of-a-binomial-distributionma151" class="section level3">
+<h3><span class="header-section-number">2.7.2</span> PMF of a Binomial Distribution<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a></h3>
+<p>Let <span class="math inline">\(X\)</span> be the number of 1’s or successes in <span class="math inline">\(n\)</span> independently performed Bernoulli trials. <span class="math inline">\(X\)</span> then has a binomial distribution, denoted by <span class="math inline">\(X \sim \text{Bi}(n, \pi)\)</span>, and with a pmf given by:</p>
+<p><span class="math display">\[p(k) = {n \choose k} \pi^k(1 - \pi)^{n-k}, \hspace{10mm} k =0, 1, 2, \dotsc,  n.\]</span></p>
+<p>The parameters are <span class="math inline">\(n\)</span>, the total number of trials, and <span class="math inline">\(\pi\)</span> which represents the probability of success. <span class="math inline">\(k\)</span> can be thought of as the value of the random variable.</p>
+<p>As an illustrative example, consider a coin toss. There are only two possible outcomes - heads or tails. This can be considered a <em>Bernoulli trial</em> where success is defined as getting heads and failure is getting tails. To calculate the probability of success, the basic definition of probability introduced at the beginning of this unit can be used.</p>
+<p><span class="math display">\[
+\begin{align}
+P(E) &amp;= \frac{\text{number of desired outcomes}}{\text{total possible outcomes}} \\
+P(\text{heads}) &amp;= \frac{1}{2} = 0.5 = \pi
+\end{align}
+\]</span></p>
+<p>Suppose that the number of heads in 5 coin tosses is of interest. This random variable <span class="math inline">\(X\)</span> fits the definition of a binomially distributed random variable, <span class="math inline">\(X \sim \text{Bi}(5, 0.5)\)</span>.</p>
+<p><strong>What is the probability of getting 2 heads in 5 coin tosses?</strong></p>
+<p>To answer the question above, the given simply need to be substituted into the pmf of the binomial distribution given earlier:</p>
+<p><span class="math display">\[
+\begin{align}
+p(k) &amp;= {n \choose k} \pi^k (1 - \pi)^{n-k} \\
+p(2) &amp;= {5 \choose 2} (0.5)^2 (1 - 0.5)^{5 - 2} \\
+p(2) &amp;= {5 \choose 2} (0.5)^2 (0.5)^3 = 0.3125
+\end{align}
+\]</span></p>
+</div>
+</div>
+<div id="homework-3" class="section level2">
+<h2><span class="header-section-number">2.8</span> Homework 3</h2>
+<p>Read about skewness in distributions and define the following terms:</p>
+<ul>
+<li>left-skewed<br />
+</li>
+<li>right-skewed</li>
+</ul>
+<p>Highlight the differences between the two.</p>
+<p><br></p>
+</div>
+<div id="references-1" class="section level2">
+<h2><span class="header-section-number">2.9</span> References</h2>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="10">
+<li id="fn10"><p>DeGroot, M. H., &amp; Schervish, M. J. (2012). Probability and Statistics. Pearson Education.<a href="probability-and-probability-distributions.html#fnref10" class="footnote-back">↩</a></p></li>
+<li id="fn11"><p>DeGroot, M. H., &amp; Schervish, M. J. (2012). Probability and Statistics. Pearson Education.<a href="probability-and-probability-distributions.html#fnref11" class="footnote-back">↩</a></p></li>
+<li id="fn12"><p><a href="https://en.wikipedia.org/wiki/Independence_(probability_theory)">Independence</a>.<a href="probability-and-probability-distributions.html#fnref12" class="footnote-back">↩</a></p></li>
+<li id="fn13"><p><a href="https://en.wikipedia.org/wiki/Random_variable">Random variable</a>.<a href="probability-and-probability-distributions.html#fnref13" class="footnote-back">↩</a></p></li>
+<li id="fn14"><p><a href="https://en.wikipedia.org/wiki/Probability_distribution">Probability distribution</a>.<a href="probability-and-probability-distributions.html#fnref14" class="footnote-back">↩</a></p></li>
+<li id="fn15"><p>Bataller, R (2013). Elementary Probability Theory for Math/AMF Majors. Mathematics Department, School of Science and Engineering, Ateneo de Manila University.<a href="probability-and-probability-distributions.html#fnref15" class="footnote-back">↩</a></p></li>
+<li id="fn16"><p>Bataller, R (2013). Elementary Probability Theory for Math/AMF Majors. Mathematics Department, School of Science and Engineering, Ateneo de Manila University.<a href="probability-and-probability-distributions.html#fnref16" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction-to-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="the-normal-distribution-and-the-central-limit-theorem.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

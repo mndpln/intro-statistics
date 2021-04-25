@@ -1,0 +1,12 @@
+bookdown::gitbook:
+  css:
+    - lib/css/bootstrap.min.css
+    - lib/css/style.css
+    - lib/css/lesson.css
+  includes:
+  config:
+    toc:
+      before: |
+        <li><a href="./">An Introduction to Statistics</a></li>
+      after: |
+        <li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>

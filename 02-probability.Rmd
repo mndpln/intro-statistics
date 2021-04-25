@@ -1,0 +1,191 @@
+---
+title: "An Introduction to Statistics"
+author: "Mariefel Nicole Deypalan"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+site: bookdown::bookdown_site
+documentclass: book
+output:
+  bookdown::gitbook:
+    df_print: paged
+github-repo: mndpln/intro-statistics
+---
+
+# Probability and Probability Distributions  
+
+```{r include=FALSE}
+source("knitr_output_hooks_mn.R")
+
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, comment = NA,
+                      tidy = TRUE, tidy.opts = list(width.cutoff = 60),
+                      fig.align = "center", null_prefix = TRUE)
+```
+
+```{r include=FALSE}
+library(data.table)
+library(kableExtra)
+library(knitr)
+library(tidyverse)
+```
+
+## Defining Probability  
+
+**Probability**  
+
+* The measure of how likely something is to occur  
+
+<br>
+
+To begin talking about this topic, three definitions will be introduced:  
+
+* **experiment** - "any process, real or hypothetical, in which the possible outcomes can be identified ahead of time"[^degroot]  
+* **event** - "a well-defined set of possible outcomes of the experiment"[^degroot]  
+* **sample space** - a collection or a set of possible outcomes or results of a random experiment
+
+<br>
+
+The simplest way of calculating the probability that an event $E$ occurs is:  
+
+$$P(E) = \frac{\text{number of desired outcomes}}{\text{total possible outcomes}}$$
+
+<br>
+
+## Homework 1  
+
+The concept of probability can be better illustrated through examples. Below are some situations where probability is of interest. For each example, identify the experiment, the event and calculate the probability.  
+
+1. What is the probability that a coin toss comes up heads?  
+2. When a die is rolled, what is the probability of getting an even number?  
+3. When two dice are rolled, what is the probability of rolling a double?  
+4. In a standard deck of 52 cards, what is the probability of drawing a face card?  
+5. In a drawer containing 3 pairs of black socks and 4 pairs of white socks, what is the probability of drawing a black pair?  
+
+## Independence  
+
+In talking about probability, independence is a term that often comes up. In statistics, two *events* $A$ and $B$ are said to be independent "if the occurrence of one does not affect the probability of occurrence of the other"[^independence-wiki].  
+
+Here are some examples of independent events:  
+
+* Flipping a fair coin and rolling a die  
+* Drawing a card from a deck, putting it back, and drawing another card  
+
+Another related concept is that of **disjoint events**. Disjoint, or **mutually exclusive** events, are events that cannot occur at the same time. If two events $A$ and $B$ are disjoint, the occurrence of $A$ means that $B$ cannot occur and vice versa.  
+
+Examples:  
+
+* Getting both heads and tails in *one* coin flip  
+* Having one pet that is both a dog and a bird (considering only real species)  
+
+## Random Variables  
+
+Random variables are very important building blocks of probability theory, but this course only requires an informal definition. Here and in the next chapters, mathematical underpinnings have been excluded where permissible to keep the content easily understandable.  
+
+**What is a random variable?** It is a variable whose values depend on the outcome of some experiment.[^rv-wiki] This informal definition combines two important terms previously introduced - **variable** and **experiment**. In statistical equations, random variables are typically represented by capital letters.  
+
+Random variables are best described by **probability distributions**. Again, building off of previously defined terms, probability distributions are, simply put, distributions of probability. More precisely, a probability distribution is a "**mathematical function** that gives the probabilities of occurrence of different possible outcomes for an experiment"[^prob-dist].  
+
+### Discrete and Continuous  
+
+Random variables can either be **discrete** or **continuous**. This classification pertains to the types of values a random variable can take. <u>Discrete random variables</u> are those that have distinct, countable values. <u>Continuous random variables</u>, on the other hand, take on any value within an interval, i.e. infinitely many values. As with everything else, this can be better understood with examples. Below is an exercise that will require the application of the conceptual definitions stated above.  
+
+## Homework 2  
+
+Classify each random variable as discrete or continuous.  
+
+* $X$, a random variable that has a value of 1 if a coin toss comes up heads, 0 otherwise  
+* A random variable $Y$ which takes on the number of times an even number comes up in 10 rolls of a die  
+* A random variable $C$ which is the exact temperature in a certain room at 10:20:00 AM  
+* $M$, the exact mass of a randomly selected person in the class  
+* $K$, the mass of a randomly selected person in a mall rounded to the nearest gram  
+
+## The Uniform Distribution  
+
+The uniform distribution has two forms - discrete and continuous. As the name implies, the uniform distribution describes an experiment where all possible outcomes in the sample space are equally likely to occur.  
+
+To differentiate between the discrete uniform and continuous uniform distributions, it is important to look at what kind of experiment is generating the data and what kind of values are possible given that process.  
+
+Suppose we are drawing a random card from a deck of 52. This is a discrete process because we can count the number of possible outcomes. Since each card has an equal chance of being drawn, a random variable $R$ corresponding to the card that will be drawn is *uniformly distributed*, with pmf given by:  
+
+$$p(x) = \frac{1}{N}, \hspace{10mm} N = 1, 2, 3, \dotsc$$
+
+$N$ is the total number of possible outcomes.  
+
+The continuous uniform distribution, on the other hand, can be illustrated by considering an interval on the number line, say $(1,5)$. consider a random variable $B$ that is uniformly distributed in this interval. This means that $B$ is equally likely to take on any value between 1 and 5. (Here, "any value" includes fractions and irrational numbers.)  
+
+The pdf of the continuous uniform distribution is given by  
+
+$$f(x) = \frac{1}{b - a}, \hspace{10mm} a < x < b$$
+
+where $a$ and $b$ are the bounds of the interval. Note that the equation above is not dependent on $x$, i.e. regardless of the value of the random variable, the probability will be the same. When a random variable is uniformly distributed across an interval, each and every value in the interval is equally likely to occur. In the example, every number in the interval $(1, 5)$ has a $\frac{1}{4}$ chance of occurring.  
+
+Suppose a number is selected at random from this interval. What is the probability that the number chosen will be between 2 and 4?  
+
+$$
+\begin{align}
+P(E) &= (j - i) \cdot \frac{1}{b-a}, \hspace{10mm} i,j \text{ are the bounds of the desired interval} \\
+&= (4 - 2) \cdot \frac{1}{5 - 1} \\
+&= 2 \cdot \frac{1}{4} = \frac{1}{2}
+\end{align}
+$$
+
+<br>
+
+
+## The Binomial Distribution  
+
+### Bernoulli Trial  
+
+A Bernoulli trial is an experiment that has only two possible outcomes - *success* and *failure*. A success is denoted by 1 and a failure by 0. Let $\pi$ be the probability of success, $0 < \pi < 1$.  
+
+This is perhaps the simplest experiment[^ma151], but gives rise to an entire family of discrete distributions. Of these, the most common is the **BINOMIAL DISTRIBUTION** whose *probability mass function* is introduced below.  
+
+### PMF of a Binomial Distribution[^ma151]  
+
+Let $X$ be the number of 1's or successes in $n$ independently performed Bernoulli trials. $X$ then has a binomial distribution, denoted by $X \sim \text{Bi}(n, \pi)$, and with a pmf given by:  
+
+$$p(k) = {n \choose k} \pi^k(1 - \pi)^{n-k}, \hspace{10mm} k =0, 1, 2, \dotsc,  n.$$
+
+The parameters are $n$, the total number of trials, and $\pi$ which represents the probability of success. $k$ can be thought of as the value of the random variable.  
+
+As an illustrative example, consider a coin toss. There are only two possible outcomes - heads or tails. This can be considered a *Bernoulli trial* where success is defined as getting heads and failure is getting tails. To calculate the probability of success, the basic definition of probability introduced at the beginning of this unit can be used.  
+
+$$
+\begin{align}
+P(E) &= \frac{\text{number of desired outcomes}}{\text{total possible outcomes}} \\
+P(\text{heads}) &= \frac{1}{2} = 0.5 = \pi
+\end{align}
+$$
+
+Suppose that the number of heads in 5 coin tosses is of interest. This random variable $X$ fits the definition of a binomially distributed random variable, $X \sim \text{Bi}(5, 0.5)$.  
+
+**What is the probability of getting 2 heads in 5 coin tosses?**  
+
+To answer the question above, the given simply need to be substituted into the pmf of the binomial distribution given earlier:  
+
+$$
+\begin{align}
+p(k) &= {n \choose k} \pi^k (1 - \pi)^{n-k} \\
+p(2) &= {5 \choose 2} (0.5)^2 (1 - 0.5)^{5 - 2} \\
+p(2) &= {5 \choose 2} (0.5)^2 (0.5)^3 = 0.3125
+\end{align}
+$$
+
+## Homework 3  
+
+Read about skewness in distributions and define the following terms:  
+
+* left-skewed  
+* right-skewed  
+
+Highlight the differences between the two.  
+
+<br>
+
+## References  
+
+[^degroot]: DeGroot, M. H., \& Schervish, M. J. (2012). Probability and Statistics. Pearson Education.  
+[^independence-wiki]: <a href="https://en.wikipedia.org/wiki/Independence_(probability_theory)">Independence</a>.  
+[^rv-wiki]: <a href="https://en.wikipedia.org/wiki/Random_variable">Random variable</a>.  
+[^prob-dist]: <a href="https://en.wikipedia.org/wiki/Probability_distribution">Probability distribution</a>.  
+[^ma151]: Bataller, R (2013). Elementary Probability Theory for Math/AMF Majors. Mathematics Department, School of Science and Engineering, Ateneo de Manila University.  
+[^open-int]: Diez, D., Centinkaya-Rundel, M., \& Barr, C. (2019). OpenIntro Statistics. OpenIntro.  
+[^cfi-norm]: <a href="https://corporatefinanceinstitute.com/resources/excel/functions/normdist-excel-normal-distribution/">NORMDIST Function</a>.  

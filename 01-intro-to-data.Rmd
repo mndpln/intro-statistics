@@ -24,7 +24,7 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
 </script>
 
 ```{r knitr-defaults, include=FALSE}
-# source("knitr_output_hooks_mn.R")
+source("knitr_output_hooks_mn.R")
 
 knitr::opts_chunk$set(
   echo = FALSE,
@@ -113,7 +113,7 @@ The **mean**, **median**, and **mode** are known as <u>measures of central tende
 
 ## Measures of Variability  
 
-The **range**, **interquartile range** (IQR), **variance**, and **standard deviation** are known as the measures of variability. They describe how far away observations tend to fall from the center.[^stats-jim]  
+The **range**, **interquartile range** (IQR), **variance**, and **standard deviation** are known as the <u>measures of variability</u>. They describe how far away observations tend to fall from the center.[^stats-jim]  
 
 ## Examining Numerical Data  
 

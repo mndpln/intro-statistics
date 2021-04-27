@@ -81,7 +81,7 @@ Categorical variables, on the other hand, have qualitative values. Each value ca
 unique(starwars$eye_color)
 ```
 
-## Homework 1  
+## Homework  
 
 The Motor Trend Car Road Tests dataset[^mtcars] comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles. Classify each variable in this dataset as numerical or categorical.  
 
@@ -114,6 +114,11 @@ The **mean**, **median**, and **mode** are known as <u>measures of central tende
 ## Measures of Variability  
 
 The **range**, **interquartile range** (IQR), **variance**, and **standard deviation** are known as the <u>measures of variability</u>. They describe how far away observations tend to fall from the center.[^stats-jim]  
+
+* Range - the difference between the maximum and the minimum  
+* IQR - the difference between the third quartile and the first quartile  
+* variance - the average squared deviation of each number from the mean of a data set  
+* Standard deviation - the square root of the variance  
 
 ## Examining Numerical Data  
 
@@ -306,8 +311,6 @@ $$
 **Answer:** There are 35 possible ways of selecting a lunch committee of 3 from a group of 7.  
 
 <br>
-
-## References  
 
 [^tidyverse]: <a href="https://www.tidyverse.org/">Tidyverse</a>.
 [^data-wiki]: <a href="https://en.wikipedia.org/wiki/Data">Wikipedia</a>.  

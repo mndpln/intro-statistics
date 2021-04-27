@@ -12,6 +12,21 @@ github-repo: mndpln/intro-statistics
 
 # The Normal Distribution and the Central Limit Theorem  
 
+```{r include=FALSE}
+source("knitr_output_hooks_mn.R")
+
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  comment = NA,
+  tidy = TRUE,
+  tidy.opts = list(width.cutoff = 60),
+  fig.align = "center",
+  null_prefix = TRUE
+)
+```
+
 ## Population vs. Sample  
 
 **Population** - all the elements from a set of data[^stattrek]  
@@ -86,7 +101,7 @@ axis(1)
 
 ### PDF of a Normal Distribution  
 
-The normal distribution is continuous, i.e. a normally distributed random variable can take on any value between $(-\infty, +\infty)$. The continuous analog of pmfs are pdfs or **probability density functions** and thus, the pdf for the normal distribution is:  
+The normal distribution is continuous, i.e. a normally distributed random variable can take on any value between $(-\infty, +\infty)$. The pdf for the normal distribution is:  
 
 $$f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}}\exp{\left[-\frac{1}{2} \cdot \left( \frac{x - \mu}{\sigma}\right)^2\right]}$$
 
@@ -126,12 +141,14 @@ knitr::include_graphics("empirical-rule.jpg")
 
 ## The Central Limit Theorem  
 
-The Central Limit Theorem (CLT) states that for a population with mean $\mu$ and standard deviation $\sigma$, taking sufficiently large random samples with replacement and computing sample means will yield a distribution of sample means that is approximately normal.[^boston-clt]  
+The Central Limit Theorem (CLT) states that for a population with mean $\mu$ and standard deviation $\sigma$, taking sufficiently large random samples with replacement and computing sample means will yield a distribution of sample means (sampling distribution) that is approximately normal.[^boston-clt]  
 
 The CLT holds true provided that the following conditions are met:  
 
 1. **Independence**: The sampled observations must be independent.  
 2. **Sample size/skew**: If the population is skewed, the sample size $n$ must be greater than 3. If not, the population distribution must be normal.   
+
+Under this theorem, the parameters for the sampling distribution are $mu$, the population mean, and $SE = \frac{\sigma}{\sqrt{n}}$, the standard error. That is, $\overline{X} \sim N(\text{mean} = \mu, \sigma = \text{SE})$.  
 
 <br>
 
@@ -159,30 +176,13 @@ Find:
 
 According to the CLT:  
 
-$$\overline{X} \sim N(\mu = 3.45, ~ \text{SE} = \frac{1.63}{100} = 0.163)$$  
+$$
+\overline{X} \sim N(\mu = 3.45, ~ \text{SE} = \frac{1.63}{\sqrt{100}} = 0.163)
+$$  
 
 $$Z = \frac{x - \mu}{\sigma} = \frac{3.6 - 3.45}{0.163} = 0.92$$  
 
 $$P(Z \geq 0.92) = 0.1788$$
-
-<br>
-
-## Confidence Intervals    
-
-### What are confidence intervals?    
-
-Confidence intervals give us a range of plausible values for the population parameter based on results from a sample. The conditions for the CLT must also be met for the confidence interval to be valid.  
-
-### Constructing a Confidence Interval  
-
-The confidence interval **for the mean** is computed as:  
-
-$$(\overline{x} - z^* \frac{s}{\sqrt{n}}, ~ \overline{x} + z^* \frac{s}{\sqrt{n}})$$
-
-* $\overline{x}$ is the sample mean  
-* $s$ is the sample mean  
-* $n$ is the sample size  
-* $z^*$ is the critical z-score  
 
 <br>
 
@@ -191,8 +191,6 @@ $$(\overline{x} - z^* \frac{s}{\sqrt{n}}, ~ \overline{x} + z^* \frac{s}{\sqrt{n}
 This unit has introduced one of the most important theorems in statistics and in doing so, has inevitably scratched the surface of one of the most fundamental inferential methods - **hypothesis testing**. The next unit will more formally introduce the rudiments of hypothesis testing - from setting up hypotheses to selecting the appropriate confidence level. After establishing the fundamental definitions, applications and examples will be presented which will hopefully solidify the previous discussions. The normal distribution will be re-introduced and in the context of hypothesis testing, its ubiquity in the realm of inferential statistics will be more apparent.  
 
 <br>
-
-## References  
 
 [^psu-4]: <a href="https://online.stat.psu.edu/stat500/lesson/4">Sampling Distributions</a>.  
 [^stattrek]: <a href="https://stattrek.com/sampling/populations-and-samples.aspx">Populations and Samples</a>.  

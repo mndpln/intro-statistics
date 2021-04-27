@@ -15,16 +15,16 @@ github-repo: mndpln/intro-statistics
 ```{r include=FALSE}
 source("knitr_output_hooks_mn.R")
 
-knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, comment = NA,
-                      tidy = TRUE, tidy.opts = list(width.cutoff = 60),
-                      fig.align = "center", null_prefix = TRUE)
-```
-
-```{r include=FALSE}
-library(data.table)
-library(kableExtra)
-library(knitr)
-library(tidyverse)
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  comment = NA,
+  tidy = TRUE,
+  tidy.opts = list(width.cutoff = 60),
+  fig.align = "center",
+  null_prefix = TRUE
+)
 ```
 
 ## Defining Probability  
@@ -97,6 +97,12 @@ Classify each random variable as discrete or continuous.
 * $M$, the exact mass of a randomly selected person in the class  
 * $K$, the mass of a randomly selected person in a mall rounded to the nearest gram  
 
+<br>
+
+## PMFs and PDFs  
+
+The **probability mass function** or pmf is a function that gives the probability that a discrete random variable is exactly equal to some value. The continuous analog of pmfs are pdfs or **probability density functions**.  
+
 ## The Uniform Distribution  
 
 The uniform distribution has two forms - discrete and continuous. As the name implies, the uniform distribution describes an experiment where all possible outcomes in the sample space are equally likely to occur.  
@@ -119,9 +125,11 @@ where $a$ and $b$ are the bounds of the interval. Note that the equation above i
 
 Suppose a number is selected at random from this interval. What is the probability that the number chosen will be between 2 and 4?  
 
+Let $i$ and $j$ be the bounds of the desired interval.  
+
 $$
 \begin{align}
-P(E) &= (j - i) \cdot \frac{1}{b-a}, \hspace{10mm} i,j \text{ are the bounds of the desired interval} \\
+P(E) &= (j - i) \cdot \frac{1}{b-a} \\
 &= (4 - 2) \cdot \frac{1}{5 - 1} \\
 &= 2 \cdot \frac{1}{4} = \frac{1}{2}
 \end{align}
@@ -179,8 +187,6 @@ Read about skewness in distributions and define the following terms:
 Highlight the differences between the two.  
 
 <br>
-
-## References  
 
 [^degroot]: DeGroot, M. H., \& Schervish, M. J. (2012). Probability and Statistics. Pearson Education.  
 [^independence-wiki]: <a href="https://en.wikipedia.org/wiki/Independence_(probability_theory)">Independence</a>.  

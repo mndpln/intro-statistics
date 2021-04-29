@@ -29,14 +29,14 @@ knitr::opts_chunk$set(
 
 ## Population vs. Sample  
 
-**Population** - all the elements from a set of data[^stattrek]  
+**Population** - all the elements from a set of data  
 **Sample** - one or more observations taken from the population  
 
 A quantity taken for the entire population is known as a population **parameter**, while that taken for a sample is called a **sample statistic**.  
 
 <br>
 
-**Sampling distribution**  
+**Sampling Distribution**  
 
 * "The sampling distribution of a statistic is a probability distribution based on a large number of samples of size $n$ from a given population."[^psu-4]  
 
@@ -141,6 +141,8 @@ knitr::include_graphics("empirical-rule.jpg")
 
 ## The Central Limit Theorem  
 
+### Conditions for the CLT  
+
 The Central Limit Theorem (CLT) states that for a population with mean $\mu$ and standard deviation $\sigma$, taking sufficiently large random samples with replacement and computing sample means will yield a distribution of sample means (sampling distribution) that is approximately normal.[^boston-clt]  
 
 The CLT holds true provided that the following conditions are met:  
@@ -193,6 +195,5 @@ This unit has introduced one of the most important theorems in statistics and in
 <br>
 
 [^psu-4]: <a href="https://online.stat.psu.edu/stat500/lesson/4">Sampling Distributions</a>.  
-[^stattrek]: <a href="https://stattrek.com/sampling/populations-and-samples.aspx">Populations and Samples</a>.  
 [^boston-clt]: <a href="https://sphweb.bumc.bu.edu/otlt/mph-modules/bs/bs704_probability/BS704_Probability12.html">Central Limit Theorem</a>.  
 [^clt-app]: Inferential Statistics, Coursera.  

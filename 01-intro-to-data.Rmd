@@ -271,7 +271,7 @@ There are several resources online which explain the ineffectiveness of pie char
 
 <br>
 
-## Prelude: Some Number Theory  
+## Aside: Some Number Theory  
 
 Digressing from the discussion on data, this section will introduce some basic notations in number theory in preparation for the discussion on probability distributions.  
 

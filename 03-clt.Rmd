@@ -148,9 +148,9 @@ The Central Limit Theorem (CLT) states that for a population with mean $\mu$ and
 The CLT holds true provided that the following conditions are met:  
 
 1. **Independence**: The sampled observations must be independent.  
-2. **Sample size/skew**: If the population is skewed, the sample size $n$ must be greater than 3. If not, the population distribution must be normal.   
+2. **Sample size/skew**: If the population is skewed, the sample size $n$ must be greater than 30. If not, the population distribution must be normal.   
 
-Under this theorem, the parameters for the sampling distribution are $mu$, the population mean, and $SE = \frac{\sigma}{\sqrt{n}}$, the standard error. That is, $\overline{X} \sim N(\text{mean} = \mu, \sigma = \text{SE})$.  
+Under this theorem, the parameters for the sampling distribution are $\mu$, the population mean, and $SE = \frac{\sigma}{\sqrt{n}}$, the standard error. That is, $\overline{X} \sim N(\text{mean} = \mu, \sigma = \text{SE})$.  
 
 <br>
 

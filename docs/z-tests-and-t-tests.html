@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Unit 3 The Normal Distribution and the Central Limit Theorem | An Introduction to Statistics</title>
-  <meta name="description" content="Unit 3 The Normal Distribution and the Central Limit Theorem | An Introduction to Statistics" />
+  <title>Unit 5 z-tests and t-tests | An Introduction to Statistics</title>
+  <meta name="description" content="Unit 5 z-tests and t-tests | An Introduction to Statistics" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Unit 3 The Normal Distribution and the Central Limit Theorem | An Introduction to Statistics" />
+  <meta property="og:title" content="Unit 5 z-tests and t-tests | An Introduction to Statistics" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="mndpln/intro-statistics" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Unit 3 The Normal Distribution and the Central Limit Theorem | An Introduction to Statistics" />
+  <meta name="twitter:title" content="Unit 5 z-tests and t-tests | An Introduction to Statistics" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="probability-and-probability-distributions.html"/>
-<link rel="next" href="confidence-intervals-and-hypothesis-testing.html"/>
+<link rel="prev" href="confidence-intervals-and-hypothesis-testing.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -161,152 +161,59 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="the-normal-distribution-and-the-central-limit-theorem" class="section level1">
-<h1><span class="header-section-number">Unit 3</span> The Normal Distribution and the Central Limit Theorem</h1>
-<div id="population-vs.-sample" class="section level2">
-<h2><span class="header-section-number">3.1</span> Population vs. Sample</h2>
-<p><strong>Population</strong> - all the elements from a set of data<br />
-<strong>Sample</strong> - one or more observations taken from the population</p>
-<p>A quantity taken for the entire population is known as a population <strong>parameter</strong>, while that taken for a sample is called a <strong>sample statistic</strong>.</p>
-<p><br></p>
-<p><strong>Sampling Distribution</strong></p>
-<ul>
-<li>“The sampling distribution of a statistic is a probability distribution based on a large number of samples of size <span class="math inline">\(n\)</span> from a given population.”<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a></li>
-</ul>
-<p>This means that…</p>
-<ul>
-<li>The sampling distribution is a probability distribution.<br />
-</li>
-<li>From the population, many samples of the same size are taken and a statistic (e.g mean, proportion) is taken for each sample.<br />
-</li>
-<li>Using the values of the statistic that were calculated from the samples, a distribution is then obtained.</li>
-</ul>
-<p><br></p>
-<p><strong>Standard Error</strong></p>
-<ul>
-<li>The measure of the variability of the sample means<br />
-</li>
-<li><span class="math inline">\(SE = \frac{\sigma}{\sqrt{n}}\)</span>, <span class="math inline">\(\sigma\)</span> is the population standard deviation</li>
-</ul>
-<p><br></p>
-</div>
-<div id="the-normal-distribution" class="section level2">
-<h2><span class="header-section-number">3.2</span> The Normal Distribution</h2>
-<p>The normal distribution is the most common among all probability distributions, perhaps because it describes a lot of variables quite well. According to an introductory statistics book, “Many variables are nearly normal, but none are exactly normal. Thus the normal distribution, while not perfect for any single problem, is very useful for a variety of problems.”<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a></p>
-<p>The normal distribution is bell-shaped. It is symmetric and unimodal; it has one peak and tapers off at both ends in exactly the same way. Below is an example of a normal distribution with a mean of 2 and a standard deviation of 1.</p>
-<p><img src="intro-statistics_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p><br></p>
-<p>Two parameters are used to describe the normal distribution - mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>. A mean of 0 and a standard deviation of 1 corresponds to the standard normal distribution which is shown below:</p>
-<p><img src="intro-statistics_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p><br></p>
-<div id="pdf-of-a-normal-distribution" class="section level3">
-<h3><span class="header-section-number">3.2.1</span> PDF of a Normal Distribution</h3>
-<p>The normal distribution is continuous, i.e. a normally distributed random variable can take on any value between <span class="math inline">\((-\infty, +\infty)\)</span>. The pdf for the normal distribution is:</p>
-<p><span class="math display">\[f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}}\exp{\left[-\frac{1}{2} \cdot \left( \frac{x - \mu}{\sigma}\right)^2\right]}\]</span></p>
-<p><br></p>
-</div>
-<div id="the-z-score" class="section level3">
-<h3><span class="header-section-number">3.2.2</span> The Z-score</h3>
-<ul>
-<li>measures how many standard deviations above or below the mean a data point is</li>
-</ul>
-<p>Formula for the <strong>z-score</strong>:</p>
-<p><span class="math display">\[z = \frac{x-\mu}{\sigma}\]</span></p>
-<p>The above equation looks like the last part of the normal pdf. Substituting this expression for z yields:</p>
-<p><span class="math display">\[f(z) = \frac{1}{\sqrt{2 \pi \sigma^2}}\exp{\left[-\frac{1}{2} \cdot z^2\right]}\]</span></p>
-<p>This is the equation for the <strong>standard normal distribution</strong>.</p>
-<p>These equations are rarely used to compute probabilities because various software have made these available through the use of functions. For example, the Excel function <code>NORMDIST()</code><a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a> gives the exact value of the pdf for any normal distribution specified by a mean and standard deviation. However, introducing these concepts is still important to justify the robustness of the statistical tools that will be discussed later on. Knowing these fundamental concepts allows one to confidently use and interpret the results of many different methods such as hypothesis testing, linear regression, etc.</p>
-<p><br></p>
-</div>
-</div>
-<div id="the-empirical-rule" class="section level2">
-<h2><span class="header-section-number">3.3</span> The Empirical Rule</h2>
-<p>Another useful property of normally distributed data is given by the <strong>empirical rule</strong>. Given that the distribution of the data is bell-shaped, this rule states that:</p>
-<ul>
-<li>Approximately 68% of the data lie within 1 standard deviation from the mean<br />
-</li>
-<li>Approximately 95% of the data, 2 standard deviations<br />
-</li>
-<li>About 99.7% of the data, 3 standard deviations</li>
-</ul>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-16"></span>
-<img src="empirical-rule.jpg" alt="The Empirical Rule" width="75%" />
-<p class="caption">
-Figure 3.1: The Empirical Rule
-</p>
-</div>
-<p><br></p>
-</div>
-<div id="the-central-limit-theorem" class="section level2">
-<h2><span class="header-section-number">3.4</span> The Central Limit Theorem</h2>
-<div id="conditions-for-the-clt" class="section level3">
-<h3><span class="header-section-number">3.4.1</span> Conditions for the CLT</h3>
-<p>The Central Limit Theorem (CLT) states that for a population with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>, taking sufficiently large random samples with replacement and computing sample means will yield a distribution of sample means (sampling distribution) that is approximately normal.<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a></p>
-<p>The CLT holds true provided that the following conditions are met:</p>
-<ol style="list-style-type: decimal">
-<li><strong>Independence</strong>: The sampled observations must be independent.<br />
-</li>
-<li><strong>Sample size/skew</strong>: If the population is skewed, the sample size <span class="math inline">\(n\)</span> must be greater than 30. If not, the population distribution must be normal.</li>
-</ol>
-<p>Under this theorem, the parameters for the sampling distribution are <span class="math inline">\(\mu\)</span>, the population mean, and <span class="math inline">\(SE = \frac{\sigma}{\sqrt{n}}\)</span>, the standard error. That is, <span class="math inline">\(\overline{X} \sim N(\text{mean} = \mu, \sigma = \text{SE})\)</span>.</p>
-<p><br></p>
-</div>
-<div id="applying-the-cltclt-app" class="section level3">
-<h3><span class="header-section-number">3.4.2</span> Applying the CLT<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a></h3>
-<div class="prob">
-<p>Suppose my iPod has 3,000 songs. I know that the distribution of lengths of these songs is right-skewed, and for this iPod, the mean length is 3.45 minutes and the standard deviation is 1.63 minutes.</p>
-<p>I’m about to take a trip to visit my parents and the drive is 6 hours. I make a random playlist of 100 songs. What is the probability that my playlist lasts the entire drive?</p>
-</div>
-<p><br></p>
-<p>Given:</p>
-<ul>
-<li><span class="math inline">\(\mu\)</span> = 3.45 minutes<br />
-</li>
-<li><span class="math inline">\(\sigma\)</span> = 1.63 minutes<br />
-</li>
-<li>6 hours = 360 minutes</li>
-</ul>
-<p>Find:</p>
-<ul>
-<li>probability that 100 <em>randomly</em> selected songs lasts 360 minutes, which is the same as<br />
-</li>
-<li>probability that the average length of the 100 <em>randomly</em> selected songs is at least <span class="math inline">\(360/100 = 3.6\)</span> minutes<br />
-</li>
-<li><span class="math inline">\(P(\overline{X} \geq 3.6)\)</span></li>
-</ul>
-<p>According to the CLT:</p>
-<p><span class="math display">\[
-\overline{X} \sim N(\mu = 3.45, ~ \text{SE} = \frac{1.63}{\sqrt{100}} = 0.163)
-\]</span></p>
-<p><span class="math display">\[Z = \frac{x - \mu}{\sigma} = \frac{3.6 - 3.45}{0.163} = 0.92\]</span></p>
-<p><span class="math display">\[P(Z \geq 0.92) = 0.1788\]</span></p>
-<p><br></p>
-</div>
-</div>
-<div id="concluding-remark" class="section level2">
-<h2><span class="header-section-number">3.5</span> Concluding Remark</h2>
-<p>This unit has introduced one of the most important theorems in statistics and in doing so, has inevitably scratched the surface of one of the most fundamental inferential methods - <strong>hypothesis testing</strong>. The next unit will more formally introduce the rudiments of hypothesis testing - from setting up hypotheses to selecting the appropriate confidence level. After establishing the fundamental definitions, applications and examples will be presented which will hopefully solidify the previous discussions. The normal distribution will be re-introduced and in the context of hypothesis testing, its ubiquity in the realm of inferential statistics will be more apparent.</p>
-<p><br></p>
+<div id="z-tests-and-t-tests" class="section level1">
+<h1><span class="header-section-number">Unit 5</span> z-tests and t-tests</h1>
+<style>
+.prob {
+  color: gray;
+  font-size:120%;
+  border: 2px solid gray;
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+</style>
+<div id="starting-with-z" class="section level2">
+<h2><span class="header-section-number">5.1</span> Starting with z</h2>
+<p>The standard normal distribution, as discussed in Unit 3, is also called the z-distribution because the process of <strong>standardization</strong> yields a random variable commonly denoted as Z.</p>
 
 </div>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="17">
-<li id="fn17"><p><a href="https://online.stat.psu.edu/stat500/lesson/4">Sampling Distributions</a>.<a href="the-normal-distribution-and-the-central-limit-theorem.html#fnref17" class="footnote-back">↩</a></p></li>
-<li id="fn18"><p>Diez, D., Centinkaya-Rundel, M., &amp; Barr, C. (2019). OpenIntro Statistics. OpenIntro.<a href="the-normal-distribution-and-the-central-limit-theorem.html#fnref18" class="footnote-back">↩</a></p></li>
-<li id="fn19"><p><a href="https://corporatefinanceinstitute.com/resources/excel/functions/normdist-excel-normal-distribution/">NORMDIST Function</a>.<a href="the-normal-distribution-and-the-central-limit-theorem.html#fnref19" class="footnote-back">↩</a></p></li>
-<li id="fn20"><p><a href="https://sphweb.bumc.bu.edu/otlt/mph-modules/bs/bs704_probability/BS704_Probability12.html">Central Limit Theorem</a>.<a href="the-normal-distribution-and-the-central-limit-theorem.html#fnref20" class="footnote-back">↩</a></p></li>
-<li id="fn21"><p>Inferential Statistics, Coursera.<a href="the-normal-distribution-and-the-central-limit-theorem.html#fnref21" class="footnote-back">↩</a></p></li>
-</ol>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="probability-and-probability-distributions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="confidence-intervals-and-hypothesis-testing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="confidence-intervals-and-hypothesis-testing.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -55,3 +55,5 @@ testing-hypotheses
 using-a-critical-value-c
 visualizing-rejection-regions
 the-p-value
+z-tests-and-t-tests
+starting-with-z

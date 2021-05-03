@@ -157,7 +157,7 @@ text(x = 1.5,
 text(x = 2.9,
      y = 0.3,
      labels = expression(paste("reject ", H[0])))
-title("Critical regions: two-sided hypothesis test")
+title("Critical Regions for a Two-sided Hypothesis Test")
 ```
 
 For *one-sided tests*, we reject depending on the parameter space of the alternate hypothesis. Hence, the rejection region for a *left-tailed test* can be shown as:  
@@ -212,9 +212,9 @@ title("Rejection Region for a Right-tailed Test")
 
 ### The p-value  
 
-Another important concept is the **p-value** which is often reported in analyses to denote statistical significance relative to a set $\alpha$ (often 0.05). It is defined as the probability of obtaining test results at least as extreme as the results actually observed when $H_0$ is true.  
+Another important concept is the **p-value** which is often reported in analyses to denote statistical significance relative to a set $\alpha$ (usually 0.05). It is defined as the probability of obtaining test results at least as extreme as the results actually observed when $H_0$ is true.  
 
-It can be thought of as a measure of how "surprised" you are of the data. Higher values mean that the data is not at all surprising relative to the null hypothesis. Although this might be the case, p-values do not dictate the probability that the null hypothesis is true given the data, and cannot be used to draw conclusions on how likely the null hypothesis is compared to the alternative, and vice versa. It only allows one to decide whether or not to reject $H_0$.  
+It can be thought of as a measure of how "surprised" you are with the data. Higher values mean that the data is not at all surprising relative to the null hypothesis. Although this might be the case, p-values do not dictate the probability that the null hypothesis is true given the data, and cannot be used to draw conclusions on how likely the null hypothesis is compared to the alternative, and vice versa. It only allows one to decide whether or not to reject $H_0$.  
 
 Nonetheless, we can by definition, use p-values to test for hypothesis. This is done by calculating the p-value and comparing it with a set $\alpha$ level. We reject the null hypothesis if the p-value $p \leq \alpha$.  
 

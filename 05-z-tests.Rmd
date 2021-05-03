@@ -1,0 +1,30 @@
+---
+title: "z-tests and t-tests"
+author: "Mariefel Nicole Deypalan"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+site: bookdown::bookdown_site
+documentclass: book
+output:
+  bookdown::gitbook:
+    df_print: paged
+github-repo: mndpln/intro-statistics
+---
+
+# z-tests and t-tests  
+
+<style>
+.prob {
+  color: gray;
+  font-size:120%;
+  border: 2px solid gray;
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+</style>
+
+## Starting with z  
+
+The standard normal distribution, as discussed in Unit 3, is also called the z-distribution because the process of **standardization** yields a random variable commonly denoted as Z.  

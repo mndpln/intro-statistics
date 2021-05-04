@@ -34,6 +34,10 @@ knitr::opts_chunk$set(
 
 A quantity taken for the entire population is known as a population **parameter**, while that taken for a sample is called a **sample statistic**.  
 
+### Why do we take samples?  
+
+Collecting data from an entire population is expensive, time-consuming, and most of the time, impossible! If all the data were needed to make even the simplest of inferences, analyses would be severely constrained. Most of the time, only a *snapshot of the data*, a sample, is made available. Statistics allows one to transcend the limits of data collection and enables one to make inferences about the entire population based only on a sample.  
+
 <br>
 
 **Sampling Distribution**  

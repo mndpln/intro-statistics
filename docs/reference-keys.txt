@@ -34,6 +34,7 @@ pmf-of-a-binomial-distributionma151
 homework-3
 the-normal-distribution-and-the-central-limit-theorem
 population-vs.-sample
+why-do-we-take-samples
 the-normal-distribution
 pdf-of-a-normal-distribution
 the-z-score
@@ -42,11 +43,8 @@ the-central-limit-theorem
 conditions-for-the-clt
 applying-the-cltclt-app
 concluding-remark
-confidence-intervals-and-hypothesis-testing
-confidence-intervals
-what-are-confidence-intervals
-constructing-a-confidence-interval
 hypothesis-testing
+hypothesis-testing-1
 the-null-and-alternative-hypotheses
 decision-errors
 setting-up-h_0-and-h_1
@@ -55,5 +53,9 @@ testing-hypotheses
 using-a-critical-value-c
 visualizing-rejection-regions
 the-p-value
-z-tests-and-t-tests
+z-tests-t-tests-and-confidence-intervals
 starting-with-z
+doing-a-z-test
+confidence-intervals
+what-are-confidence-intervals
+constructing-a-confidence-interval

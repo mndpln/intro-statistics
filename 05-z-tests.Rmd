@@ -10,7 +10,7 @@ output:
 github-repo: mndpln/intro-statistics
 ---
 
-# z-tests and t-tests  
+# Z-tests, t-tests, and Confidence Intervals  
 
 <style>
 .prob {
@@ -25,6 +25,74 @@ github-repo: mndpln/intro-statistics
 }
 </style>
 
-## Starting with z  
+## Starting with Z  
 
-The standard normal distribution, as discussed in Unit 3, is also called the z-distribution because the process of **standardization** yields a random variable commonly denoted as Z.  
+The standard normal distribution, as discussed in Unit 3, is also called the Z Distribution because the process of **standardization** yields a random variable commonly denoted as Z.  
+
+```{r}
+z <- seq(-3, 3, length = 100)
+plot(
+  z,
+  dnorm(z),
+  type = 'l',
+  lwd = 3,
+  ylab = "density",
+  axes = FALSE,
+  main = 'Z Distribution (Standard Normal)'
+)
+box(bty = "l")
+axis(2)
+axis(1)
+```
+
+## Doing a Z-test  
+
+Now that we have been introduced to the Z Distribution and the hypothesis testing framework, we are now ready to answer questions like, **"Is there evidence to conclude that the mean of a population is equal to a certain number?"**  
+
+<div class="prob">  
+Suppose a noodle company claims that the net weight of one cup of instant noodles is 100 g. You are hired by this company to do statistical analysis for them, specifically to test whether the 1 million cups of instant noodles produced this week meet their 100-gram claim. You cannot weigh all the 1 million cups individually because reopening them would cost the company money, and it would obviously take you a very long time to weigh each cup. The manager of the manufacturing division gives you 500 cups of noodles to work with and hopes that with your statistical knowledge, you will be able to prove or dispute their claim. What should you do?  
+</div>  
+
+The problem above can be solved using a simple hypothesis setup:  
+
+$$
+\begin{aligned}
+  H_0 &: \mu = \mu_0 \\
+  H_1 &: \mu \neq \mu_0
+\end{aligned}
+$$
+
+where $\mu$ is the true mean of the population, and $\mu_0$ is the reference mean. In the problem, the reference mean is 100 g, since that is what the company claims. The population, whose true mean is $\mu$, is the batch of 1 million cups produced during the week. Using statistical jargon, we would like to test whether the population mean is indeed 100 g using the sample of 500 noodle cups. Recall that the sample mean, $\overline{X}$, is an estimate of $\mu$. Hence, taking the mean of the 500 cups of noodles would give an estimate of the true mean weight of the batch produced. $\overline{X}$ is simply the arithmetic average of the weights of the 500 cups, i.e., $\overline{X} = \sum_i^{n}\frac{x_i}{n}$. To test this hypothesis, we can take the difference between $\overline{X}$ and $\mu_0$ and check if it is large enough to say that the population mean $\mu$ is not 100 g. Note that the direction of the difference (i.e. whether it is positive or negative) does not matter as implied by the hypotheses. Thus, from Unit 4, we can reject the null hypothesis when:  
+
+$$|\overline{X} - \mu_0| \geq c$$
+
+where $c$ is the *critical value*. At this point, one might be tempted to choose an arbitrary value for $c$, say 10 or 15. That would undermine the integrity of the procedure performed. Recall from the previous discussion that the appropriate $c$ is determined by first setting an $\alpha$. For this problem, assume that the company would like to be 95% sure that the batch produced meets their 100-gram claim. Given this 95% confidence level, $\alpha$ would have a value of 0.05 since we can only allow incorrect rejection of $H_0$ 5% of the time. This is a two-tailed test and hence, the critical value to be used should correspond to $\alpha/2$.  
+
+```{r}
+q <- qnorm(1-0.05/2)
+shade.dist(a = -q, b=q, type = 'two', from = -3, to= 3, xlab = "Z")
+abline(v = 1, lty = 2)
+abline(v = 2.5, lty = 3)
+text(x= 1.5, y = 0.3, labels = expression(paste("do not\nreject ", H[0])))
+text(x= 2.9, y = 0.3, labels = expression(paste("reject ", H[0])))
+title(expression(paste("Critical regions at ", alpha == 0.05)))
+```
+
+## Confidence Intervals  
+
+### What are confidence intervals?    
+
+Confidence intervals give us a range of plausible values for the population parameter based on results from a sample. The conditions for the CLT must also be met for the confidence interval to be valid.  
+
+### Constructing a Confidence Interval  
+
+The confidence interval **for the mean** is computed as:  
+
+$$(\overline{x} - z^* \frac{s}{\sqrt{n}}, ~ \overline{x} + z^* \frac{s}{\sqrt{n}})$$
+
+* $\overline{x}$ is the sample mean  
+* $s$ is the sample mean  
+* $n$ is the sample size  
+* $z^*$ is the critical z-score  
+
+<br>

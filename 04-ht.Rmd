@@ -10,31 +10,12 @@ output:
 github-repo: mndpln/intro-statistics
 ---
 
-# Confidence Intervals and Hypothesis Testing  
+# Hypothesis Testing  
 
 ```{r}
 library(RColorBrewer)
 library(stests) # install using devtools::install_github('fhernanb/stests')
 ```
-
-## Confidence Intervals    
-
-### What are confidence intervals?    
-
-Confidence intervals give us a range of plausible values for the population parameter based on results from a sample. The conditions for the CLT must also be met for the confidence interval to be valid.  
-
-### Constructing a Confidence Interval  
-
-The confidence interval **for the mean** is computed as:  
-
-$$(\overline{x} - z^* \frac{s}{\sqrt{n}}, ~ \overline{x} + z^* \frac{s}{\sqrt{n}})$$
-
-* $\overline{x}$ is the sample mean  
-* $s$ is the sample mean  
-* $n$ is the sample size  
-* $z^*$ is the critical z-score  
-
-<br>
 
 ## Hypothesis Testing  
 
@@ -127,7 +108,7 @@ Statistical tests for composite hypotheses are called **one-sided tests** and, d
 
 ### Using a Critical Value $c$  
 
-In doing a hypothesis test, we either decide to **reject** or **not reject** the null hypothesis. To do so, we need to define a statistic $T$ as the "distance" between the sample statistic and $\theta_0$. $T$ is thus random (as our data is a random sample of our population). Given a particular value of $\theta_0$, we might want to have a threshold $c$, which we will call the critical value. Using $c$ we can decide to reject $H_0$ if $T \geq c$, or not reject $H_0$ if $T < c$. Each threshold corresponds to a value of $\alpha$.  
+In doing a hypothesis test, we either decide to **reject** or **not reject** the null hypothesis. To do so, we need to define a statistic $T$ as the "distance" between the sample statistic and $\theta_0$. $T$ is thus random (as our data is a random sample of our population). Given a particular value of $\theta_0$, we might want to have a threshold $c$, which we will call the **critical value**. Using $c$ we can decide to reject $H_0$ if $T \geq c$, or not reject $H_0$ if $T < c$. Each threshold corresponds to a value of $\alpha$.  
 
 The correct way of testing hypotheses is to set the $\alpha$ first and then use the corresponding critical value $c$. The mathematics behind this is ommitted for now as it can get quite overwhelming. If this has piqued curiosity, however, a number of introductory statistics texts and resources on the Internet explore the mathematical underpinnings of hypothesis testing in detail. The applications of this concept will be shown in the unit on z-tests and t-tests.  
 

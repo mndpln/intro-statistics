@@ -117,7 +117,9 @@ $$f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}}\exp{\left[-\frac{1}{2} \cdot \left( \fr
 
 Formula for the **z-score**:  
 
-$$z = \frac{x-\mu}{\sigma}$$
+$$Z = \frac{X-\mu}{\sigma}, \hspace{10mm} X \sim N(\mu, \sigma)$$
+
+Obtaining a variable $Z$ from a normally distributed random variable $X$ is called **standardization**, and the variable $Z$ is called a standard normal variable.  
 
 The above equation looks like the last part of the normal pdf. Substituting this expression for z yields:  
 

@@ -56,6 +56,8 @@ the-p-value
 z-tests-t-tests-and-confidence-intervals
 starting-with-z
 doing-a-z-test
+using-the-z-statistic
+p-values
 confidence-intervals
 what-are-confidence-intervals
 constructing-a-confidence-interval

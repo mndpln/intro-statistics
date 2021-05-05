@@ -24,7 +24,7 @@
 <meta name="author" content="Mariefel Nicole Deypalan" />
 
 
-<meta name="date" content="2021-05-05" />
+<meta name="date" content="2021-05-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -139,7 +139,10 @@
 </ul></li>
 <li class="chapter" data-level="5" data-path="z-tests-t-tests-and-confidence-intervals.html"><a href="z-tests-t-tests-and-confidence-intervals.html"><i class="fa fa-check"></i><b>5</b> Z-tests, t-tests, and Confidence Intervals</a><ul>
 <li class="chapter" data-level="5.1" data-path="z-tests-t-tests-and-confidence-intervals.html"><a href="z-tests-t-tests-and-confidence-intervals.html#starting-with-z"><i class="fa fa-check"></i><b>5.1</b> Starting with Z</a></li>
-<li class="chapter" data-level="5.2" data-path="z-tests-t-tests-and-confidence-intervals.html"><a href="z-tests-t-tests-and-confidence-intervals.html#doing-a-z-test"><i class="fa fa-check"></i><b>5.2</b> Doing a Z-test</a></li>
+<li class="chapter" data-level="5.2" data-path="z-tests-t-tests-and-confidence-intervals.html"><a href="z-tests-t-tests-and-confidence-intervals.html#doing-a-z-test"><i class="fa fa-check"></i><b>5.2</b> Doing a Z-test</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="z-tests-t-tests-and-confidence-intervals.html"><a href="z-tests-t-tests-and-confidence-intervals.html#using-the-z-statistic"><i class="fa fa-check"></i><b>5.2.1</b> Using the Z Statistic</a></li>
+<li class="chapter" data-level="5.2.2" data-path="z-tests-t-tests-and-confidence-intervals.html"><a href="z-tests-t-tests-and-confidence-intervals.html#p-values"><i class="fa fa-check"></i><b>5.2.2</b> p-values</a></li>
+</ul></li>
 <li class="chapter" data-level="5.3" data-path="z-tests-t-tests-and-confidence-intervals.html"><a href="z-tests-t-tests-and-confidence-intervals.html#confidence-intervals"><i class="fa fa-check"></i><b>5.3</b> Confidence Intervals</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="z-tests-t-tests-and-confidence-intervals.html"><a href="z-tests-t-tests-and-confidence-intervals.html#what-are-confidence-intervals"><i class="fa fa-check"></i><b>5.3.1</b> What are confidence intervals?</a></li>
 <li class="chapter" data-level="5.3.2" data-path="z-tests-t-tests-and-confidence-intervals.html"><a href="z-tests-t-tests-and-confidence-intervals.html#constructing-a-confidence-interval"><i class="fa fa-check"></i><b>5.3.2</b> Constructing a Confidence Interval</a></li>
@@ -180,14 +183,16 @@
 </style>
 <div id="starting-with-z" class="section level2">
 <h2><span class="header-section-number">5.1</span> Starting with Z</h2>
-<p>The standard normal distribution, as discussed in Unit 3, is also called the Z Distribution because the process of <strong>standardization</strong> yields a random variable commonly denoted as Z.</p>
+<p>The standard normal distribution, as discussed in Unit 3, is also called the Z Distribution because the process of <strong>standardization</strong> yields a random variable commonly called <span class="math inline">\(Z\)</span>.</p>
 <p><img src="intro-statistics_files/figure-html/unnamed-chunk-21-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="doing-a-z-test" class="section level2">
 <h2><span class="header-section-number">5.2</span> Doing a Z-test</h2>
 <p>Now that we have been introduced to the Z Distribution and the hypothesis testing framework, we are now ready to answer questions like, <strong>“Is there evidence to conclude that the mean of a population is equal to a certain number?”</strong></p>
+<div id="using-the-z-statistic" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Using the Z Statistic</h3>
 <div class="prob">
-<p>Suppose a noodle company claims that the net weight of one cup of instant noodles is 100 g. You are hired by this company to do statistical analysis for them, specifically to test whether the 1 million cups of instant noodles produced this week meet their 100-gram claim. You cannot weigh all the 1 million cups individually because reopening them would cost the company money, and it would obviously take you a very long time to weigh each cup. The manager of the manufacturing division gives you 500 cups of noodles to work with and hopes that with your statistical knowledge, you will be able to prove or dispute their claim. What should you do?</p>
+<p>Suppose a pasta company claims that the net weight of one pack of pasta is 100 g, with a standard deviation of 0.5 g. You are hired by this company to do statistical analysis for them, specifically to test whether the 1 million packs of pasta produced this week meet their 100-gram claim. You cannot weigh all the 1 million packs individually because reopening them would cost the company money, and it would obviously take you a very long time to weigh each pack. The manager of the manufacturing division gives you 500 packs of pasta to work with and hopes that with your statistical knowledge, you will be able to prove or dispute their claim. What should you do?</p>
 </div>
 <p><br></p>
 <p>The problem above can be solved using a simple hypothesis setup:</p>
@@ -197,10 +202,28 @@
   H_1 &amp;: \mu \neq \mu_0
 \end{aligned}
 \]</span></p>
-<p>where <span class="math inline">\(\mu\)</span> is the true mean of the population, and <span class="math inline">\(\mu_0\)</span> is the reference mean. In the problem, the reference mean is 100 g, since that is what the company claims. The population, whose true mean is <span class="math inline">\(\mu\)</span>, is the batch of 1 million cups produced during the week. Using statistical jargon, we would like to test whether the population mean is indeed 100 g using the sample of 500 noodle cups. Recall that the sample mean, <span class="math inline">\(\overline{X}\)</span>, is an estimate of <span class="math inline">\(\mu\)</span>. Hence, taking the mean of the 500 cups of noodles would give an estimate of the true mean weight of the batch produced. <span class="math inline">\(\overline{X}\)</span> is simply the arithmetic average of the weights of the 500 cups, i.e., <span class="math inline">\(\overline{X} = \sum_i^{n}\frac{x_i}{n}\)</span>. To test this hypothesis, we can take the difference between <span class="math inline">\(\overline{X}\)</span> and <span class="math inline">\(\mu_0\)</span> and check if it is large enough to say that the population mean <span class="math inline">\(\mu\)</span> is not 100 g. Note that the direction of the difference (i.e. whether it is positive or negative) does not matter as implied by the hypotheses. Thus, from Unit 4, we can reject the null hypothesis when:</p>
+<p>where <span class="math inline">\(\mu\)</span> is the true mean of the population, and <span class="math inline">\(\mu_0\)</span> is the reference mean. In the problem, the reference mean is 100 g, since that is what the company claims. The population, whose true mean is <span class="math inline">\(\mu\)</span>, is the batch of 1 million packs produced during the week. Using statistical jargon, we would like to test whether the population mean is indeed 100 g using the sample of 500 pasta packs. Recall that the sample mean, <span class="math inline">\(\overline{X}\)</span>, is an estimate of <span class="math inline">\(\mu\)</span>. Hence, taking the mean of the 500 packs of pasta would give an estimate of the true mean weight of the batch produced. <span class="math inline">\(\overline{X}\)</span> is simply the arithmetic average of the weights of the 500 packs, i.e., <span class="math inline">\(\overline{X} = \sum_i^{n}\frac{x_i}{n}\)</span>. To test this hypothesis, we can take the difference between <span class="math inline">\(\overline{X}\)</span> and <span class="math inline">\(\mu_0\)</span> and check if it is large enough to say that the population mean <span class="math inline">\(\mu\)</span> is not 100 g. Note that the direction of the difference (i.e. whether it is positive or negative) does not matter as implied by the hypotheses. Thus, from Unit 4, we can reject the null hypothesis when:</p>
 <p><span class="math display">\[|\overline{X} - \mu_0| \geq c\]</span></p>
-<p>where <span class="math inline">\(c\)</span> is the <em>critical value</em>. At this point, one might be tempted to choose an arbitrary value for <span class="math inline">\(c\)</span>, say 10 or 15. That would undermine the integrity of the procedure performed. Recall from the previous discussion that the appropriate <span class="math inline">\(c\)</span> is determined by first setting an <span class="math inline">\(\alpha\)</span>. For this problem, assume that the company would like to be 95% sure that the batch produced meets their 100-gram claim. Given this 95% confidence level, <span class="math inline">\(\alpha\)</span> would have a value of 0.05 since we can only allow incorrect rejection of <span class="math inline">\(H_0\)</span> 5% of the time. This is a two-tailed test and hence, the critical value to be used should correspond to <span class="math inline">\(\alpha/2\)</span>.</p>
+<p>where <span class="math inline">\(c\)</span> is the <em>critical value</em>. At this point, one might be tempted to choose an arbitrary value for <span class="math inline">\(c\)</span>, say 10 or 15. That would undermine the integrity of the procedure performed. Recall from the previous discussion that the appropriate <span class="math inline">\(c\)</span> is determined by first setting an <span class="math inline">\(\alpha\)</span>.</p>
+<p>For this problem, assume that the company would like to be 95% sure that the batch produced meets their 100-gram claim. Given this 95% confidence level, <span class="math inline">\(\alpha\)</span> would have a value of 0.05 since we can only allow incorrect rejection of <span class="math inline">\(H_0\)</span> 5% of the time. This is a two-tailed test and hence, the critical value to be used should correspond to <span class="math inline">\(\alpha/2\)</span>.</p>
+<p>What is the appropriate critical value to use? We have 500 samples, a sufficiently large number, and it would be safe to say that the samples are independent. Since the assumptions are met, we can use the <strong>Central Limit Theorem</strong> and assume that <span class="math inline">\(\overline{X}\)</span> is normally distributed. All that needs to be done is <strong>standardize</strong> <span class="math inline">\(\overline{X}\)</span> to get the corresponding Z statistic and compare that with the critical <strong>Z-score</strong>.</p>
+<p>To standardize, the formula for the Z-score from Unit 3 is used. Note that this time, the variable to be standardized is <span class="math inline">\(\overline{X}\)</span>, not <span class="math inline">\(X\)</span>, and hence the appropriate mean and standard deviation must be used. From Unit 3, we know that <span class="math inline">\(\overline{X} \sim N(\mu, SE = \sigma/\sqrt{n})\)</span> and so:</p>
+<p><span class="math display">\[
+\begin{align}
+Z &amp;= \frac{\overline{X} - \mu}{SE} \\
+&amp;= \frac{\overline{X} - \mu}{\sigma/\sqrt{n}} \\
+&amp;= \frac{\sqrt{n} \cdot \big(\overline{X} - \mu\big)}{\sigma}
+\end{align}
+\]</span></p>
+<p>To find the critical Z-score corresponding to <span class="math inline">\(\alpha/2\)</span>, one would need to look at the <strong>cumulative distribution function</strong> or CDF of the Z distribution. Formally, the critical Z-score is computed as</p>
+<p><span class="math display">\[c = \Phi^{-1}(1-\alpha_0/2) \cdot \frac{\sigma}{\sqrt{n}}\]</span></p>
+<p>where <span class="math inline">\(\Phi\)</span> is the CDF of the standard normal distribution. Thankfully, because the standard normal distribution is commonly used, Z tables and computers have made this much easier. For the pasta problem, the Z-score for a two-tailed test corresponding to <span class="math inline">\(\alpha = 0.05\)</span> is 1.96. Therefore, we reject the null hypothesis if the calculated Z statistic which is denoted as <span class="math inline">\(Z\)</span>, is <span class="math inline">\(&lt; -1.96\)</span> or <span class="math inline">\(&gt; 1.96\)</span>, which corresponds to the shaded regions below:</p>
 <p><img src="intro-statistics_files/figure-html/unnamed-chunk-22-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="p-values" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> p-values</h3>
+<p>P-values can also be used to decide whether or not the null hypothesis should be rejected. This can be done by using the standard normal distribution to get the cumulative probability, <span class="math inline">\(\Phi(Z)\)</span>, which corresponds to the <span class="math inline">\(Z\)</span> statistic we have computed from <span class="math inline">\(\overline{X}\)</span>. We reject the null hypothesis if <span class="math inline">\(\alpha \leq 1-\Phi(Z)\)</span>.</p>
+</div>
 </div>
 <div id="confidence-intervals" class="section level2">
 <h2><span class="header-section-number">5.3</span> Confidence Intervals</h2>

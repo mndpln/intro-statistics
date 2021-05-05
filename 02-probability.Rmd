@@ -115,7 +115,7 @@ $$p(x) = \frac{1}{N}, \hspace{10mm} N = 1, 2, 3, \dotsc$$
 
 $N$ is the total number of possible outcomes.  
 
-The continuous uniform distribution, on the other hand, can be illustrated by considering an interval on the number line, say $(1,5)$. consider a random variable $B$ that is uniformly distributed in this interval. This means that $B$ is equally likely to take on any value between 1 and 5. (Here, "any value" includes fractions and irrational numbers.)  
+The continuous uniform distribution, on the other hand, can be illustrated by considering an interval on the number line, say $(1,5)$. consider a random variable $B$ that is uniformly distributed in this interval. This means that $B$ is equally likely to take on any value between 1 and 5, including fractions and irrational numbers.  
 
 The pdf of the continuous uniform distribution is given by  
 

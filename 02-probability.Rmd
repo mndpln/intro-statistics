@@ -121,7 +121,7 @@ The pdf of the continuous uniform distribution is given by
 
 $$f(x) = \frac{1}{b - a}, \hspace{10mm} a < x < b$$
 
-where $a$ and $b$ are the bounds of the interval. Note that the equation above is not dependent on $x$, i.e. regardless of the value of the random variable, the probability will be the same. When a random variable is uniformly distributed across an interval, each and every value in the interval is equally likely to occur. In the example, every number in the interval $(1, 5)$ has a $\frac{1}{4}$ chance of occurring.  
+where $a$ and $b$ are the bounds of the interval. Note that the equation above is not dependent on $x$, i.e. regardless of the value of the random variable, the probability will be the same. When a random variable is uniformly distributed across an interval, each and every value in the interval is equally likely to occur. In the example, every number in the interval $(1, 5)$ has an equal chance of being chosen.  
 
 Suppose a number is selected at random from this interval. What is the probability that the number chosen will be between 2 and 4?  
 

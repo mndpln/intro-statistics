@@ -1,5 +1,5 @@
 ---
-title: "z-tests and t-tests"
+title: "An Introduction to Statistics"
 author: "Mariefel Nicole Deypalan"
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
 site: bookdown::bookdown_site
@@ -15,7 +15,7 @@ github-repo: mndpln/intro-statistics
 <style>
 .prob {
   color: gray;
-  font-size:120%;
+  font-size:110%;
   border: 2px solid gray;
   border-radius: 5px;
   padding-left: 20px;
@@ -52,6 +52,8 @@ Now that we have been introduced to the Z Distribution and the hypothesis testin
 <div class="prob">  
 Suppose a noodle company claims that the net weight of one cup of instant noodles is 100 g. You are hired by this company to do statistical analysis for them, specifically to test whether the 1 million cups of instant noodles produced this week meet their 100-gram claim. You cannot weigh all the 1 million cups individually because reopening them would cost the company money, and it would obviously take you a very long time to weigh each cup. The manager of the manufacturing division gives you 500 cups of noodles to work with and hopes that with your statistical knowledge, you will be able to prove or dispute their claim. What should you do?  
 </div>  
+
+<br>
 
 The problem above can be solved using a simple hypothesis setup:  
 

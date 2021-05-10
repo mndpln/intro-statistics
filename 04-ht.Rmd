@@ -19,7 +19,7 @@ library(stests) # install using devtools::install_github('fhernanb/stests')
 
 ## Hypothesis Testing  
 
-Suppose one is interested in finding out whether one advertising method, say X, is more effective than a similar method Y in increasing the sales of a business. **"Is X method more effective compared to method Y?"**  
+Suppose one is interested in finding out whether one advertising method, say X, is more effective than a similar method Y in increasing the sales of a business. **"Is method X more effective than method Y?"**  
 
 A simple way to answer this is to collect data for both Method X and Method Y. Suppose we randomly select a day or week, and count the number of sales attributable to each method during this period. We could then get the average of both methods and take the difference. We can say that Method X is better if the difference is positive, or worse if the difference is negative. This seems simple, but remember that the values will vary each time the data is collected. Hence, the difference in the averages will also be different and we cannot be 100% certain of the magnitude and direction of the difference.  
 

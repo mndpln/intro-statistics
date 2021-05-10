@@ -76,7 +76,7 @@ For this problem, assume that the company would like to be 95% sure that the bat
 
 What is the appropriate critical value to use? We have 500 samples, a sufficiently large number, and it would be safe to say that the samples are independent. Since the assumptions are met, we can use the **Central Limit Theorem** and assume that $\overline{X}$ is normally distributed. All that needs to be done is **standardize** $\overline{X}$ to get the corresponding Z statistic and compare that with the critical **Z-score**.  
 
-To standardize, the formula for the Z-score from Unit 3 is used. Note that this time, the variable to be standardized is $\overline{X}$, not $X$, and hence the appropriate mean and standard deviation must be used. From Unit 3, we know that $\overline{X} \sim N(\mu, SE = \sigma/\sqrt{n})$ and so:  
+To standardize, the formula for the Z-score from Unit 3 is used. Note that this time, the variable to be standardized is $\overline{X}$, not $X$, and hence the appropriate mean and standard deviation must be used. We know that $\overline{X} \sim N(\mu, SE = \sigma/\sqrt{n})$ and so:  
 
 $$
 \begin{align}
@@ -90,7 +90,7 @@ To find the critical Z-score corresponding to $\alpha/2$, one would need to look
 
 $$c = \Phi^{-1}(1-\alpha_0/2) \cdot \frac{\sigma}{\sqrt{n}}$$  
 
-where $\Phi$ is the CDF of the standard normal distribution. Thankfully, because the standard normal distribution is commonly used, Z tables and computers have made this much easier. For the pasta problem, the Z-score for a two-tailed test corresponding to $\alpha = 0.05$ is 1.96. Therefore, we reject the null hypothesis if the calculated Z statistic which is denoted as $Z$, is $< -1.96$ or $> 1.96$, which corresponds to the shaded regions below:  
+where $\Phi$ is the CDF of the standard normal distribution. Thankfully, because the standard normal distribution is commonly used, Z tables and computers have made this much easier. For the pasta problem, the Z-score for a two-tailed test corresponding to $\alpha = 0.05$ is 1.96. Therefore, we reject the null hypothesis if the calculated Z statistic, $Z$, is $< -1.96$ or $> 1.96$, which corresponds to the shaded regions below:  
 
 ```{r}
 q <- qnorm(1 - 0.05 / 2)
@@ -116,6 +116,54 @@ title(expression(paste("Critical regions at ", alpha == 0.05)))
 ### p-values  
 
 P-values can also be used to decide whether or not the null hypothesis should be rejected. This can be done by using the standard normal distribution to get the cumulative probability, $\Phi(Z)$, which corresponds to the $Z$ statistic we have computed from $\overline{X}$. We reject the null hypothesis if $\alpha \leq 1-\Phi(Z)$.  
+
+## Student's t-distribution  
+
+The Z-test assumes that the true variance of the population is known, which is not always the case. This renders the Z-test unusable. For these situations where the variance is unknown, we use the t-test, which is based on the t-distribution.  
+
+The t-distribution, originally called Student's t-distribution (from the pseudonym "Student" of the inventor, William Sealy Gosset), has an extra parameter that describes the shape of the distribution. This parameter is called **degrees of freedom**, $\nu$. The graph below shows how different values of $\nu$ affects the shape of the distribution.  
+
+```{r}
+df <- c(5, 3, 2, 1)
+tx <- seq(-3, 3, length = 100)
+cols <- brewer.pal(n = length(df), name = "Set2")
+lwd_param <- 2
+
+for (i in 1:length(df)) {
+  if (i == 1) {
+    plot(
+      x = tx,
+      y = dt(tx, df = df[i]),
+      type = 'l',
+      frame.plot = FALSE,
+      xlab = "U",
+      ylab = "density",
+      col = cols[i],
+      lwd = lwd_param
+    )
+    box(bty = "l")
+    axis(2)
+    axis(1)
+  } else {
+    lines(
+      x = tx,
+      y = dt(tx, df = df[i]),
+      col = cols[i],
+      lwd = lwd_param
+    )
+  }
+}
+title("t-distribution by degrees of freedom")
+legend(
+  "topright",
+  legend = paste0("v = ", df),
+  lty = 1,
+  col = cols,
+  bty =  'n'
+)
+```
+
+<br>
 
 ## Confidence Intervals  
 

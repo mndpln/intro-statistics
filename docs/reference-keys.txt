@@ -58,6 +58,7 @@ starting-with-z
 doing-a-z-test
 using-the-z-statistic
 p-values
+students-t-distribution
 confidence-intervals
 what-are-confidence-intervals
 constructing-a-confidence-interval

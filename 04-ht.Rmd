@@ -40,7 +40,7 @@ $\theta \in \Omega_1$ or the alternative hypothesis is true, but we do not rejec
 
 For most cases, we can set our hypothesis test to have a certain Type I error rate, $\alpha$ (a number from 0 to 1), which corresponds to the probability of committing a Type I error. Thus, if we have a test with $\alpha = 0.05$, it means that we have at most a **5% chance** of rejecting the null hypothesis when the null hypothesis is true.  
 
-The Type II error, which is denoted by $\beta$ and corresponds to not rejecting a false null hypothesis, is related to a concept called **power**. Statistical power is the probability of a hypothesis test of finding an effect if there is an effect to be found. Mathematically, power is computed as $1 - \beta$. Experimental design includes what is called **power analysis**, which determines the appropriate sample size needed to detect the desired difference or effect. This is beyond the scope of the course, and will not be discussed further here.  
+The Type II error, which is denoted by $\beta$ and corresponds to not rejecting a false null hypothesis, is related to a concept called **power**. Statistical power is the probability that the hypothesis test will find an effect if there is an effect to be found. Mathematically, power is computed as $1 - \beta$. Experimental design includes what is called **power analysis**, which determines the appropriate sample size needed to detect the desired difference or effect. This is beyond the scope of the course, and will not be discussed further here.  
 
 ### Setting Up Hypotheses  
 

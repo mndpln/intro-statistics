@@ -47,7 +47,7 @@ hypothesis-testing
 hypothesis-testing-1
 the-null-and-alternative-hypotheses
 decision-errors
-setting-up-h_0-and-h_1
+setting-up-hypotheses
 simple-and-composite-hypotheses
 testing-hypotheses
 using-a-critical-value-c

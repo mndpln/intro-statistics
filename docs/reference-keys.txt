@@ -59,6 +59,7 @@ doing-a-z-test
 using-the-z-statistic
 p-values
 students-t-distribution
+a-simple-t-test-example
 confidence-intervals
 what-are-confidence-intervals
 constructing-a-confidence-interval

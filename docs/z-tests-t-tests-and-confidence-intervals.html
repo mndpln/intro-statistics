@@ -24,7 +24,7 @@
 <meta name="author" content="Mariefel Nicole Deypalan" />
 
 
-<meta name="date" content="2021-05-13" />
+<meta name="date" content="2021-05-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -125,7 +125,7 @@
 <li class="chapter" data-level="3.5" data-path="the-normal-distribution-and-the-central-limit-theorem.html"><a href="the-normal-distribution-and-the-central-limit-theorem.html#concluding-remark"><i class="fa fa-check"></i><b>3.5</b> Concluding Remark</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>4</b> Hypothesis Testing</a><ul>
-<li class="chapter" data-level="4.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#hypothesis-testing-1"><i class="fa fa-check"></i><b>4.1</b> Hypothesis Testing</a><ul>
+<li class="chapter" data-level="4.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#basic-concepts"><i class="fa fa-check"></i><b>4.1</b> Basic Concepts</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#the-null-and-alternative-hypotheses"><i class="fa fa-check"></i><b>4.1.1</b> The Null and Alternative Hypotheses</a></li>
 <li class="chapter" data-level="4.1.2" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#decision-errors"><i class="fa fa-check"></i><b>4.1.2</b> Decision Errors</a></li>
 <li class="chapter" data-level="4.1.3" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#setting-up-hypotheses"><i class="fa fa-check"></i><b>4.1.3</b> Setting Up Hypotheses</a></li>
@@ -145,9 +145,14 @@
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="z-tests-t-tests-and-confidence-intervals.html"><a href="z-tests-t-tests-and-confidence-intervals.html#students-t-distribution"><i class="fa fa-check"></i><b>5.3</b> Student’s t-distribution</a></li>
 <li class="chapter" data-level="5.4" data-path="z-tests-t-tests-and-confidence-intervals.html"><a href="z-tests-t-tests-and-confidence-intervals.html#a-simple-t-test-example"><i class="fa fa-check"></i><b>5.4</b> A Simple t-test Example</a></li>
-<li class="chapter" data-level="5.5" data-path="z-tests-t-tests-and-confidence-intervals.html"><a href="z-tests-t-tests-and-confidence-intervals.html#confidence-intervals"><i class="fa fa-check"></i><b>5.5</b> Confidence Intervals</a><ul>
-<li class="chapter" data-level="5.5.1" data-path="z-tests-t-tests-and-confidence-intervals.html"><a href="z-tests-t-tests-and-confidence-intervals.html#what-are-confidence-intervals"><i class="fa fa-check"></i><b>5.5.1</b> What are confidence intervals?</a></li>
-<li class="chapter" data-level="5.5.2" data-path="z-tests-t-tests-and-confidence-intervals.html"><a href="z-tests-t-tests-and-confidence-intervals.html#constructing-a-confidence-interval"><i class="fa fa-check"></i><b>5.5.2</b> Constructing a Confidence Interval</a></li>
+<li class="chapter" data-level="5.5" data-path="z-tests-t-tests-and-confidence-intervals.html"><a href="z-tests-t-tests-and-confidence-intervals.html#tests-for-composite-hypotheses"><i class="fa fa-check"></i><b>5.5</b> Tests for Composite Hypotheses</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="z-tests-t-tests-and-confidence-intervals.html"><a href="z-tests-t-tests-and-confidence-intervals.html#rejection-regions"><i class="fa fa-check"></i><b>5.5.1</b> Rejection Regions</a></li>
+<li class="chapter" data-level="5.5.2" data-path="z-tests-t-tests-and-confidence-intervals.html"><a href="z-tests-t-tests-and-confidence-intervals.html#calculating-p-values"><i class="fa fa-check"></i><b>5.5.2</b> Calculating p-values</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="z-tests-t-tests-and-confidence-intervals.html"><a href="z-tests-t-tests-and-confidence-intervals.html#a-two-sample-t-test"><i class="fa fa-check"></i><b>5.6</b> A Two-Sample t-test</a></li>
+<li class="chapter" data-level="5.7" data-path="z-tests-t-tests-and-confidence-intervals.html"><a href="z-tests-t-tests-and-confidence-intervals.html#confidence-intervals"><i class="fa fa-check"></i><b>5.7</b> Confidence Intervals</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="z-tests-t-tests-and-confidence-intervals.html"><a href="z-tests-t-tests-and-confidence-intervals.html#what-are-confidence-intervals"><i class="fa fa-check"></i><b>5.7.1</b> What are confidence intervals?</a></li>
+<li class="chapter" data-level="5.7.2" data-path="z-tests-t-tests-and-confidence-intervals.html"><a href="z-tests-t-tests-and-confidence-intervals.html#constructing-a-confidence-interval"><i class="fa fa-check"></i><b>5.7.2</b> Constructing a Confidence Interval</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -217,7 +222,7 @@ Z &amp;= \frac{\overline{X} - \mu}{SE} \\
 &amp;= \frac{\sqrt{n} \cdot \big(\overline{X} - \mu\big)}{\sigma}
 \end{align}
 \]</span></p>
-<p>To find the critical Z-score corresponding to <span class="math inline">\(\alpha/2\)</span>, one would need to look at the <strong>cumulative distribution function</strong> or CDF of the Z distribution. Formally, the critical Z-score is computed as</p>
+<p>To find the critical Z-score corresponding to <span class="math inline">\(\alpha/2\)</span>, one would need to look at the <strong>cumulative distribution function</strong> or CDF of the Z distribution. In general, the CDF gives the probability that a random variable is <strong>less than or equal</strong> to a certain value. Formally, the critical Z-score is computed as</p>
 <p><span class="math display">\[c = \Phi^{-1}(1-\alpha_0/2) \cdot \frac{\sigma}{\sqrt{n}}\]</span></p>
 <p>where <span class="math inline">\(\Phi\)</span> is the CDF of the standard normal distribution. Thankfully, because the standard normal distribution is commonly used, Z tables and computers have made this much easier. For the pasta problem, the Z-score for a two-tailed test corresponding to <span class="math inline">\(\alpha = 0.05\)</span> is 1.96. Therefore, we reject the null hypothesis if the calculated Z statistic, <span class="math inline">\(Z\)</span>, is <span class="math inline">\(&lt; -1.96\)</span> or <span class="math inline">\(&gt; 1.96\)</span>, which corresponds to the shaded regions below:</p>
 <p><img src="intro-statistics_files/figure-html/unnamed-chunk-22-1.png" width="672" style="display: block; margin: auto;" /></p>
@@ -252,14 +257,65 @@ Z &amp;= \frac{\overline{X} - \mu}{SE} \\
 <p><img src="intro-statistics_files/figure-html/unnamed-chunk-24-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p><br></p>
 </div>
+<div id="tests-for-composite-hypotheses" class="section level2">
+<h2><span class="header-section-number">5.5</span> Tests for Composite Hypotheses</h2>
+<div id="rejection-regions" class="section level3">
+<h3><span class="header-section-number">5.5.1</span> Rejection Regions</h3>
+<p>In obtaining the Z- or t-statistic for a composite hypothesis setup, the following formula is used:</p>
+<p><span class="math display">\[Z = \frac{\sqrt{n} \cdot (\overline{X} - \mu_0)}{\sigma}, \hspace{10mm} U = \frac{\sqrt{n} \cdot (\overline{X} - \mu_0)}{S_X}\]</span></p>
+<p>Comparing this with the equation for a simple hypothesis setup, notice that the only change here is the absence of the absolute value symbol. Because this is a one-tailed test, we now care about the direction of statistic. For a <strong>left-tailed</strong> test, we reject <span class="math inline">\(H_0\)</span> if the test statistic <span class="math inline">\(U \leq c\)</span>, while for a <strong>right-tailed</strong> test, we reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(U \geq c\)</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-25"></span>
+<img src="intro-statistics_files/figure-html/unnamed-chunk-25-1.png" alt="Rejection Region for a Left-tailed Test" width="672" />
+<p class="caption">
+Figure 5.1: Rejection Region for a Left-tailed Test
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-26"></span>
+<img src="intro-statistics_files/figure-html/unnamed-chunk-26-1.png" alt="Rejection Region for a Right-tailed Test" width="672" />
+<p class="caption">
+Figure 5.2: Rejection Region for a Right-tailed Test
+</p>
+</div>
+</div>
+<div id="calculating-p-values" class="section level3">
+<h3><span class="header-section-number">5.5.2</span> Calculating p-values</h3>
+<p>For the one-tailed test, we calculate the p-values based on the alternative hypothesis. For example, if we have <span class="math inline">\(H_1:\mu &lt; \mu_0\)</span>, then we are to find:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\phi(Z) \quad &amp;\text{(for z-test)} \\
+T_{n-1}(U)\quad &amp;\text{(for t-test)}
+\end{aligned}
+\]</span></p>
+<p>On the other hand, for <span class="math inline">\(H_1: \mu &gt; \mu_0\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+1-\phi(Z) \quad &amp;\text{(for z-test)} \\
+1-T_{n-1}(U)\quad &amp;\text{(for t-test)}
+\end{aligned}
+\]</span></p>
+<p>Note that <span class="math inline">\(\Phi\)</span> and <span class="math inline">\(T\)</span> are the <strong>cumulative distribution functions</strong> or CDFs, and they always give the areas of the left tail. Visualizing the rejection regions will explain why we subract the area from 1 in a right-tailed test.</p>
+<p><br></p>
+</div>
+</div>
+<div id="a-two-sample-t-test" class="section level2">
+<h2><span class="header-section-number">5.6</span> A Two-Sample t-test</h2>
+<p>There are situations when we want to compare two groups and test if their population means are different, or if one is greater than (or less than) relative to the other. In other words, instead of comparing <span class="math inline">\(\mu\)</span> to a reference value <span class="math inline">\(\mu_0\)</span>, we are now comparing two population means - <span class="math inline">\(\mu_X\)</span> and <span class="math inline">\(\mu_Y\)</span>.</p>
+<p>For a two-sampled test, We now have a new way of calculating the t-statistic. incorporating the new variables <span class="math inline">\(\overline{Y}\)</span> and <span class="math inline">\(\hat{\sigma_Y}\)</span>. Below is the formal definition of a two-sample t-statistic:</p>
+<p><span class="math display">\[
+\begin{aligned}
+U = \frac{(m+n-2)^{1/2}(\overline{X} - \overline{Y})}{(\frac{1}{m} + \frac{1}{n})^{1/2}(S^2_X+S^2_Y)^{1/2}}
+\end{aligned}
+\]</span></p>
+<p><span class="math inline">\(\overline{X}\)</span> and <span class="math inline">\(\overline{Y}\)</span> are the respective sample means and <span class="math inline">\(S_X^2\)</span> and <span class="math inline">\(S_Y^2\)</span> are the residual sum of squares or RSS, defined as <span class="math inline">\(S_X^2 = \sum_i^m(X_i - \overline{X})^2\)</span> and <span class="math inline">\(S^2_Y = \sum_j^n(Y_j - \overline{Y})^2\)</span>. We use the t-distribution with <span class="math inline">\(m + n - 2\)</span> degrees of freedom for inference in this case.</p>
+</div>
 <div id="confidence-intervals" class="section level2">
-<h2><span class="header-section-number">5.5</span> Confidence Intervals</h2>
+<h2><span class="header-section-number">5.7</span> Confidence Intervals</h2>
 <div id="what-are-confidence-intervals" class="section level3">
-<h3><span class="header-section-number">5.5.1</span> What are confidence intervals?</h3>
+<h3><span class="header-section-number">5.7.1</span> What are confidence intervals?</h3>
 <p>Confidence intervals give us a range of plausible values for the population parameter based on results from a sample. The conditions for the CLT must also be met for the confidence interval to be valid.</p>
 </div>
 <div id="constructing-a-confidence-interval" class="section level3">
-<h3><span class="header-section-number">5.5.2</span> Constructing a Confidence Interval</h3>
+<h3><span class="header-section-number">5.7.2</span> Constructing a Confidence Interval</h3>
 <p>The confidence interval <strong>for the mean</strong> is computed as:</p>
 <p><span class="math display">\[(\overline{x} - z^* \frac{s}{\sqrt{n}}, ~ \overline{x} + z^* \frac{s}{\sqrt{n}})\]</span></p>
 <ul>

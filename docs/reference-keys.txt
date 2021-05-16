@@ -1,4 +1,6 @@
 fig:unnamed-chunk-16
+fig:unnamed-chunk-25
+fig:unnamed-chunk-26
 introduction-to-data
 what-is-data
 types-of-data
@@ -44,7 +46,7 @@ conditions-for-the-clt
 applying-the-cltclt-app
 concluding-remark
 hypothesis-testing
-hypothesis-testing-1
+basic-concepts
 the-null-and-alternative-hypotheses
 decision-errors
 setting-up-hypotheses
@@ -60,6 +62,10 @@ using-the-z-statistic
 p-values
 students-t-distribution
 a-simple-t-test-example
+tests-for-composite-hypotheses
+rejection-regions
+calculating-p-values
+a-two-sample-t-test
 confidence-intervals
 what-are-confidence-intervals
 constructing-a-confidence-interval

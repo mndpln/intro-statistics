@@ -17,7 +17,7 @@ library(RColorBrewer)
 library(stests) # install using devtools::install_github('fhernanb/stests')
 ```
 
-## Hypothesis Testing  
+## Basic Concepts  
 
 Suppose one is interested in finding out whether one advertising method, say X, is more effective than a similar method Y in increasing the sales of a business. **"Is method X more effective than method Y?"**  
 
@@ -84,7 +84,7 @@ $$
 
 $\theta_0$ is the parameter value of the null hypothesis set. Statistical tests that seek to test this hypothesis setup are called **two-sided hypothesis tests**.  
 
-A **composite hypothesis**, on the other hand, is a setup where the hypothesis space of either $\Omega_0$ or $\Omega_1$ contains more than one value for $\theta_0$. There are two ways to set up a composite hypothesis and the difference lies in the inequality sign used. One could either do:  
+A **composite hypothesis**, on the other hand, is a setup where the hypothesis space (either $\Omega_0$ or $\Omega_1$) contains more than one value for $\theta_0$. There are two ways to set up a composite hypothesis and the difference lies in the inequality sign used. One could either do:  
 
 $$
 \begin{aligned}

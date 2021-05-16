@@ -86,7 +86,7 @@ Z &= \frac{\overline{X} - \mu}{SE} \\
 \end{align}
 $$
 
-To find the critical Z-score corresponding to $\alpha/2$, one would need to look at the **cumulative distribution function** or CDF of the Z distribution. Formally, the critical Z-score is computed as  
+To find the critical Z-score corresponding to $\alpha/2$, one would need to look at the **cumulative distribution function** or CDF of the Z distribution. In general, the CDF gives the probability that a random variable is **less than or equal** to a certain value. Formally, the critical Z-score is computed as  
 
 $$c = \Phi^{-1}(1-\alpha_0/2) \cdot \frac{\sigma}{\sqrt{n}}$$  
 
@@ -214,6 +214,100 @@ title(expression(paste(
 ```
 
 <br>
+
+## Tests for Composite Hypotheses  
+
+### Rejection Regions  
+
+In obtaining the Z- or t-statistic for a composite hypothesis setup, the following formula is used:  
+
+$$Z = \frac{\sqrt{n} \cdot (\overline{X} - \mu_0)}{\sigma}, \hspace{10mm} U = \frac{\sqrt{n} \cdot (\overline{X} - \mu_0)}{S_X}$$
+
+Comparing this with the equation for a simple hypothesis setup, notice that the only change here is the absence of the absolute value symbol. Because this is a one-tailed test, we now care about the direction of statistic. For a **left-tailed** test, we reject $H_0$ if  the test statistic $U \leq c$, while for a **right-tailed** test, we reject $H_0$ if $U \geq c$.  
+
+```{r fig.cap="Rejection Region for a Left-tailed Test"}
+q <- qt(1 - 0.05, 5)
+shade.dist(
+  a = -q,
+  b = q,
+  param = list(df = 5),
+  dist = "dt",
+  type = 'lower',
+  from = -5,
+  to = 5,
+  xlab = "U"
+)
+abline(v = 1, lty = 2)
+abline(v = -3, lty = 3)
+text(x = 1.8,
+     y = 0.3,
+     labels = expression(paste("do not\nreject ", H[0])))
+text(x = -2.3,
+     y = 0.3,
+     labels = expression(paste("reject ", H[0])))
+title(expression(paste("Critical region for ", H[0]:mu >= mu[0], " at ", alpha == 0.05, ", ", nu == 5)))
+```
+
+```{r fig.cap="Rejection Region for a Right-tailed Test"}
+q <- qt(1 - 0.05, 5)
+shade.dist(
+  a = -q,
+  b = q,
+  param = list(df = 5),
+  dist = "dt",
+  type = 'upper',
+  from = -5,
+  to = 5,
+  xlab = "U"
+)
+abline(v = 1, lty = 2)
+abline(v = 2.7, lty = 3)
+text(x = 1.8,
+     y = 0.3,
+     labels = expression(paste("do not\nreject ", H[0])))
+text(x = 3.5,
+     y = 0.3,
+     labels = expression(paste("reject ", H[0])))
+title(expression(paste("critical region for ", H[0]:mu <= mu[0], " at ", alpha == 0.05, ", ", nu == 5)))
+```
+
+### Calculating p-values  
+
+For the one-tailed test, we calculate the p-values based on the alternative hypothesis. For example, if we have $H_1:\mu < \mu_0$, then we are to find:  
+
+$$
+\begin{aligned}
+\phi(Z) \quad &\text{(for z-test)} \\
+T_{n-1}(U)\quad &\text{(for t-test)}
+\end{aligned}
+$$
+
+On the other hand, for $H_1: \mu > \mu_0$:  
+
+$$
+\begin{aligned}
+1-\phi(Z) \quad &\text{(for z-test)} \\
+1-T_{n-1}(U)\quad &\text{(for t-test)}
+\end{aligned}
+$$
+
+Note that $\Phi$ and $T$ are the **cumulative distribution functions** or CDFs, and they always give the areas of the left tail. Visualizing the rejection regions will explain why we subract the area from 1 in a right-tailed test.  
+
+<br>
+
+## A Two-Sample t-test  
+
+There are situations when we want to compare two groups and test if their population means are different, or if one is greater than (or less than) relative to the other. In other words, instead of comparing $\mu$ to a reference value $\mu_0$, we are now comparing two population means - $\mu_X$ and $\mu_Y$.  
+
+For a two-sampled test, We now have a new way of calculating the t-statistic. incorporating the new variables $\overline{Y}$ and $\hat{\sigma_Y}$. Below is the formal definition of a two-sample t-statistic:  
+
+$$
+\begin{aligned}
+U = \frac{(m+n-2)^{1/2}(\overline{X} - \overline{Y})}{(\frac{1}{m} + \frac{1}{n})^{1/2}(S^2_X+S^2_Y)^{1/2}}
+\end{aligned}
+$$
+
+$\overline{X}$ and $\overline{Y}$ are the respective sample means and $S_X^2$ and $S_Y^2$ are the residual sum of squares or RSS, defined as $S_X^2 = \sum_i^m(X_i - \overline{X})^2$ and $S^2_Y = \sum_j^n(Y_j - \overline{Y})^2$. We use the t-distribution with $m + n - 2$ degrees of freedom for inference in this case.  
 
 ## Confidence Intervals  
 

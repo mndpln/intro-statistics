@@ -143,6 +143,20 @@ Another useful property of normally distributed data is given by the **empirical
 knitr::include_graphics("empirical-rule.jpg")
 ```
 
+As an example, suppose that for the entire population of a certain country, age is normally distributed with a mean of 37 years and standard deviation of 3.5 years. According to the Empirical Rule, 68% of this population have ages that lie within 1 standard deviation from the mean, which is 37. "Within 1 standard deviation" means 1 $\sigma$ above and below the mean. To compute the age interval where 68% of the population lie:  
+
+\begin{align}
+\text{lower bound} &= \overline{X} - \sigma \\
+&= 37 - 3.5 \\
+&= 33.5 \\
+
+\text{upper bound} &= \overline{X} + \sigma \\
+&= 37 + 3.5 \\
+&= 40.5
+\end{align}
+
+Hence, the interval is $(33.5, 40.5)$.  
+
 <br>
 
 ## The Central Limit Theorem  

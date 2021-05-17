@@ -35,8 +35,7 @@ Suppose we have a space $\Omega$ where all possible parameters $\theta$ about th
 
 Since there are two hypotheses and they are disjoint, only one hypothesis can be true. If the wrong hypothesis is taken to be true, a loss or cost is incurred.  
 
-Suppose that the $\theta \in \Omega_0$ or the null hypothesis is true, but it is rejected. This is called a **Type I error**. If instead
-$\theta \in \Omega_1$ or the alternative hypothesis is true, but we do not reject the null hypothesis, we are making a **Type II error**.  
+Suppose that the $\theta \in \Omega_0$ or the null hypothesis is true, but it is rejected. This is called a **Type I error**. If instead $\theta \in \Omega_1$ or the alternative hypothesis is true, but we do not reject the null hypothesis, we are making a **Type II error**.  
 
 For most cases, we can set our hypothesis test to have a certain Type I error rate, $\alpha$ (a number from 0 to 1), which corresponds to the probability of committing a Type I error. Thus, if we have a test with $\alpha = 0.05$, it means that we have at most a **5% chance** of rejecting the null hypothesis when the null hypothesis is true.  
 

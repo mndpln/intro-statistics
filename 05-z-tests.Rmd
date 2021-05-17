@@ -25,12 +25,19 @@ github-repo: mndpln/intro-statistics
 }
 </style>
 
+```{r}
+library(kableExtra)
+library(RColorBrewer)
+library(stests) # install using devtools::install_github('fhernanb/stests')
+library(tidyverse)
+```
+
 ## Starting with Z  
 
 The standard normal distribution, as discussed in Unit 3, is also called the Z Distribution because the process of **standardization** yields a random variable commonly called $Z$.  
 
 ```{r}
-z <- seq(-3, 3, length = 100)
+z = seq(-3, 3, length = 100)
 plot(
   z,
   dnorm(z),
@@ -93,7 +100,7 @@ $$c = \Phi^{-1}(1-\alpha_0/2) \cdot \frac{\sigma}{\sqrt{n}}$$
 where $\Phi$ is the CDF of the standard normal distribution. Thankfully, because the standard normal distribution is commonly used, Z tables and computers have made this much easier. For the pasta problem, the Z-score for a two-tailed test corresponding to $\alpha = 0.05$ is 1.96. Therefore, we reject the null hypothesis if the calculated Z statistic, $Z$, is $< -1.96$ or $> 1.96$, which corresponds to the shaded regions below:  
 
 ```{r}
-q <- qnorm(1 - 0.05 / 2)
+q = qnorm(1 - 0.05 / 2)
 shade.dist(
   a = -q,
   b = q,
@@ -124,10 +131,10 @@ The Z-test assumes that the true variance of the population is known, which is n
 The t-distribution, originally called Student's t-distribution (from the pseudonym "Student" of the inventor, William Sealy Gosset), has an extra parameter that describes the shape of the distribution. This parameter is called **degrees of freedom**, $\nu$. The graph below shows how different values of $\nu$ affects the shape of the distribution.  
 
 ```{r}
-df <- c(5, 3, 2, 1)
-tx <- seq(-3, 3, length = 100)
-cols <- brewer.pal(n = length(df), name = "Set2")
-lwd_param <- 2
+df = c(5, 3, 2, 1)
+tx = seq(-3, 3, length = 100)
+cols = brewer.pal(n = length(df), name = "Set2")
+lwd_param = 2
 
 for (i in 1:length(df)) {
   if (i == 1) {
@@ -189,7 +196,7 @@ $$\hat{\sigma}=\sqrt{\frac{\sum_i^n{(X_i -\overline{X})^2}}{n-1}}$$
 Like the Z-test, we reject $H_0$ if the statistic $U$ is greater than or equal to a critical statistic $c$, i.e. when $U \geq c$ given that $\mu = \mu_0$. The critical statistic $c$ is computed by $T^{-1}_{n-1}(1-\alpha/2)$ (for a two-tailed test) where $T_{n-1}$ is the cumulative density function of the $t$-distribution for $n-1$ degrees of freedom. Below is the $t$-distribution with 5 degrees of freedom:  
 
 ```{r}
-q <- qt(1 - 0.05 / 2, 5)
+q = qt(1 - 0.05 / 2, 5)
 shade.dist(
   a = -q,
   b = q,
@@ -219,14 +226,14 @@ title(expression(paste(
 
 ### Rejection Regions  
 
-In obtaining the Z- or t-statistic for a composite hypothesis setup, the following formula is used:  
+In obtaining the $Z$- or $t$-statistic for a composite hypothesis setup, the following formula is used:  
 
-$$Z = \frac{\sqrt{n} \cdot (\overline{X} - \mu_0)}{\sigma}, \hspace{10mm} U = \frac{\sqrt{n} \cdot (\overline{X} - \mu_0)}{S_X}$$
+$$Z = \sqrt{n} \cdot \frac{(\overline{X} - \mu_0)}{\sigma}, \hspace{10mm} U = \sqrt{n} \cdot \frac{(\overline{X} - \mu_0)}{S_X}$$
 
 Comparing this with the equation for a simple hypothesis setup, notice that the only change here is the absence of the absolute value symbol. Because this is a one-tailed test, we now care about the direction of statistic. For a **left-tailed** test, we reject $H_0$ if  the test statistic $U \leq c$, while for a **right-tailed** test, we reject $H_0$ if $U \geq c$.  
 
 ```{r fig.cap="Rejection Region for a Left-tailed Test"}
-q <- qt(1 - 0.05, 5)
+q = qt(1 - 0.05, 5)
 shade.dist(
   a = -q,
   b = q,
@@ -249,7 +256,7 @@ title(expression(paste("Critical region for ", H[0]:mu >= mu[0], " at ", alpha =
 ```
 
 ```{r fig.cap="Rejection Region for a Right-tailed Test"}
-q <- qt(1 - 0.05, 5)
+q = qt(1 - 0.05, 5)
 shade.dist(
   a = -q,
   b = q,
@@ -268,7 +275,7 @@ text(x = 1.8,
 text(x = 3.5,
      y = 0.3,
      labels = expression(paste("reject ", H[0])))
-title(expression(paste("critical region for ", H[0]:mu <= mu[0], " at ", alpha == 0.05, ", ", nu == 5)))
+title(expression(paste("Critical region for ", H[0]:mu <= mu[0], " at ", alpha == 0.05, ", ", nu == 5)))
 ```
 
 ### Calculating p-values  
@@ -299,7 +306,7 @@ Note that $\Phi$ and $T$ are the **cumulative distribution functions** or CDFs, 
 
 There are situations when we want to compare two groups and test if their population means are different, or if one is greater than (or less than) relative to the other. In other words, instead of comparing $\mu$ to a reference value $\mu_0$, we are now comparing two population means - $\mu_X$ and $\mu_Y$.  
 
-For a two-sampled test, We now have a new way of calculating the t-statistic. incorporating the new variables $\overline{Y}$ and $\hat{\sigma_Y}$. Below is the formal definition of a two-sample t-statistic:  
+For a two-sampled test, we now have a new way of calculating the t-statistic. incorporating the new variables $\overline{Y}$ and $\hat{\sigma_Y}$. Below is the formal definition of a two-sample t-statistic:  
 
 $$
 \begin{aligned}
@@ -308,6 +315,235 @@ U = \frac{(m+n-2)^{1/2}(\overline{X} - \overline{Y})}{(\frac{1}{m} + \frac{1}{n}
 $$
 
 $\overline{X}$ and $\overline{Y}$ are the respective sample means and $S_X^2$ and $S_Y^2$ are the residual sum of squares or RSS, defined as $S_X^2 = \sum_i^m(X_i - \overline{X})^2$ and $S^2_Y = \sum_j^n(Y_j - \overline{Y})^2$. We use the t-distribution with $m + n - 2$ degrees of freedom for inference in this case.  
+
+## Hypothesis Testing Examples  
+
+### Problem 1  
+
+<div class="prob">
+The manufacturer of a certain automobile claims that under typical urban driving conditions, the automobile will travel on average at least 20 miles per gallon of gasoline. An owner of one of these automobile notes the mileages that she has obtained in her own urban driving when she fills her automobile's tank with gasoline on nine different occasions. Her records show the following, in miles per gallon: 15.6, 18.6, 18.3, 20.1, 21.5, 18.4, 19.1, 20.4, and 19.0. Test the manufacturer's claim by carrying out a test at a significance level $\alpha$ = 0.05.  
+</div>  
+
+<br>
+
+To solve this problem, we first need to formulate the hypothesis that is being asked. Since the manufacturer claims that the car runs on **"at least"** 20 miles per gallon, we can say that the null and alternative hypotheses are:  
+
+$$
+\begin{aligned}
+H_0 &: \mu \geq 20 \\
+H_1 &: \mu < 20
+\end{aligned}
+$$
+
+```{r mileage, include=FALSE}
+mileage = c(15.6, 18.6, 18.3, 20.1, 21.5, 18.4, 19.1, 20.4, 19.0)
+avg = mean(mileage)
+sd_mpg = sd(mileage)
+```
+
+```{r include=FALSE, eval=FALSE}
+t.test(mileage, alternative = "less", mu = 20)
+```
+
+We do not have information about the population variance and thus we use a **t-test**. The next step would be to calculate the t-statistic. The sample mean in this case is simply:  
+
+$$
+\begin{aligned}
+\overline{X} &= \frac{\sum^{n}_{i}X_{i}}{n}\\
+&= \frac{(15.6 + 18.6 + 18.3 + 20.1 + 21.5 + 18.4 + 19.1 + 20.4 + 19.0)}{9} \\
+&= 19
+\end{aligned}
+$$
+
+The sample standard deviation is calculated as:  
+
+$$
+\begin{aligned}
+\hat{\sigma} &= \frac{\sum_{i}^{n}(X_i - \overline{X})^2}{n-1}\\
+&= \frac{\sum_{i}^{n}(X_i-19)^2}{n-1} \\
+&= 1.66 
+\end{aligned}
+$$
+
+Putting this all together, we calculate the t-statistic to be:  
+
+$$
+\begin{aligned}
+U &= \frac{\sqrt{n} \cdot (\overline{X} - \mu_0)}{S_X} \\
+&= \frac{\sqrt{9} \cdot (19 - 20)}{1.66} \\
+&= -1.81
+\end{aligned}
+$$
+
+We can decide whether or not to reject the null hypothesis by either calculating the critical statistic or the p-value.  
+
+#### Critical Statistic  
+
+The critical statistic is the t-statistic that corresponds to $1 - \alpha$, that is, getting the value of $T^{-1}_{n-1}(1-\alpha)$ where $T^{-1}_{n-1}$ is the inverse of the CDF with $n-1$ degrees of freedom. The degrees of freedom here is $\nu = n-1 = 8$.  
+
+```{r, include=FALSE}
+t_crit = round(qt(0.05, 8), 2)
+```
+
+In **Microsoft Excel** this can be done using the function `T.INV` with arguments `probability` and `deg_freedom`. For probability $alpha_0 = 0.05$, and 8 degrees of freedom, we get $c = `r t_crit`$. Since $U = -1.81 > `r t_crit`$, we do not reject the null hypothesis and conclude that the evidence gathered by the owner supports the manufacturer's claim that the automobile runs at 20 mpg on average.  
+
+#### Calculating the p-value  
+
+We get the p-value by using the CDF of the t-distribution $T_{n-1}(U)$. This can achieved in **Microsoft Excel** by calling the function `T.DIST` with arguments `X`, which is the statistic for which we evaluate the CDF (which is $U$ in this case), `deg_freedom`, and `cumulative` which tells the function if we want to add up the densities of the distribution. Since the function is by default left-tailed, the densities are added up from left to right. This is shown below:  
+
+```{r}
+pr = round(pt(-1.81, 8) * 100, 1)
+shade.dist(
+  b = -1.81,
+  param = list(df = 8),
+  dist = "dt",
+  type = 'lower',
+  from = -5,
+  to = 5,
+  xlab = "U"
+)
+text(
+  x = -3,
+  y = 0.1,
+  labels = paste("about", pr, "%\n covered")
+)
+title(expression(paste("Left-tailed Probability of Calculated ", U)))
+```
+
+Since we want to test if there is enough evidence to reject $\mu \geq 20$, it makes sense to get the cumulative probability from the left. It would mean that highly negative values for the statistic are highly unlikely since going from left to right correspond to increasing probabilities.  
+
+For this problem, we calculate $p = 1 - T_{n-1}(U) = `r pr/100`$. Since $p > \alpha_0$ we do not reject the null hypothesis at $\alpha_0 = 0.05$.  
+
+<br>
+
+### Problem 2  
+
+<div class="prob">
+As a marketing executive, you are curious if a social media marketing strategy would be more effective than the current paid media marketing strategy of the retail company. To investigate this, you ran two different marketing campaigns alternately for a total of 12 months. The number of sales was recorded each month as shown below:  
+
+```{r}
+set.seed(250)
+marketing = c("social media", "paid media")
+tbl =
+  tibble::tibble(
+    months = month.name,
+    `Marketing Strategies` = factor(rep(marketing, 6),
+                                    levels = c("social media", "paid media")),
+    Sales = as.integer(runif(12, 0, 100))
+  )
+
+kable(tbl) %>%
+  kable_styling()
+```
+
+Apply hypothesis testing to find out whether there is evidence that social media marketing is better than paid media marketing in generating sales.  
+</div>  
+
+<br>
+
+We want to find out if social media marketing (S) is better than paid media marketing (P). The hypotheses can be set up as follows:  
+
+$$
+\begin{aligned}
+H_0 &: \mu_{S} \leq \mu_{P} \\
+H_1 &: \mu_{S} > \mu_{P}
+\end{aligned}
+$$
+
+With these statements, the null hypothesis states that social media marketing is at most as good as paid marketing, while $H_1$ states that social media marketing generates more sales.  
+
+This problem compares two samples, sales due to social media marketing and sales due to paid media marketing. Hence, we use the $t$-statistic definition for two samples.
+
+Below are the sample means and standard deviations for both *paid media* and *social media*:
+
+```{r}
+ave_mean_samples = tbl %>%
+  dplyr::group_by(`Marketing Strategies`) %>%
+  dplyr::summarise(
+    `Mean` = round(mean(Sales), 1),
+    `Standard Deviation` = round(sd(Sales), 1),
+    `Sum of Squares (S)` =  round(sum((Sales - mean(
+      Sales
+    )) ^ 2), 1)
+  )
+
+kable(ave_mean_samples) %>%
+  kable_styling(full_width = FALSE)
+```
+
+<br>
+
+Using this information, we then calculate the $t$-statistic. Since both marketing strategies were both deployed for an equal number of months during the year, we can say that $m = n = 6$.  
+
+```{r, include=FALSE, eval=FALSE}
+t.test(
+  Sales ~ `Marketing Strategies`,
+  data = tbl,
+  alternative = "greater",
+  var.equal = TRUE
+)
+```
+
+$$
+\begin{aligned}
+U &= \frac{(m+n-2)^{1/2}(\overline{X} - \overline{Y})}
+{\big(\frac{1}{m} + \frac{1}{n}\big)(S^2_X+S^2_Y)^{1/2}} \\
+
+&= \frac{(6+6-2)^{1/2}(48.0 - 64.8)}
+{\big(\frac{1}{6} + \frac{1}{6}\big)(3,798 + 5,196.8)^{1/2}} \\
+
+&= -0.971
+\end{aligned}
+$$
+
+```{r}
+t_crit = qt(0.05, 10, lower.tail = FALSE)
+p_value = pt(-0.971, 10, lower.tail = FALSE)
+```
+
+Since we are testing for $H_0: \mu_{SM} \leq \mu_{PM}$, we reject it if the statistic $U \geq c$, where $c$ is equal to $T^{-1}_{m+n-1}(1-\alpha_0)$. For $\text{df} = m + n - 2 = 10$, the $t$-statistic at $1 - \alpha$ is equal to `r round(t_crit, 2)`. Since $U < c$ we do not reject the null hypothesis.  
+
+```{r}
+shade.dist(
+  b = t_crit,
+  param = list(df = 10),
+  dist = "dt",
+  type = 'upper',
+  from = -5,
+  to = 5,
+  xlab = "U"
+)
+abline(v = -0.971, lty = 2)
+text(x = -1.8, y = 0.3, labels = "U = -0.971")
+text(x = 0.3, y = 0.1, labels = "do not reject\n null hypothesis")
+text(x = 3, y = 0.1, labels = "reject the\n null hypothesis")
+```
+
+  
+
+To obtain the p-value, we get the cumulative probability from the cdf $T_{m+n-2}(U)$. Looking at $H_0$, we reject positive values and thus it would make sense to get the area of the right-tail, $1 - T_{m+n-2}(U)$, where a lower probability would mean a very unlikely outcome given the null hypothesis. We get this using the Excel formula `= 1 - T.DIST(-0.971, 10, TRUE)`.  
+
+We calculate the p-value as $`r round(p_value, 2)`$. At significance level $\alpha = 0.05$, we do 
+not reject the null hypothesis. We visualize this below:  
+
+  
+
+```{r}
+shade.dist(
+  b = -0.971,
+  param = list(df = 10),
+  dist = "dt",
+  type = 'upper',
+  from = -5,
+  to = 5,
+  xlab = "U"
+)
+text(x = 0.3,
+     y = 0.1,
+     labels = paste(round(p_value * 100, 1), "% covered"))
+```
+
+<br>
 
 ## Confidence Intervals  
 
@@ -319,11 +555,31 @@ Confidence intervals give us a range of plausible values for the population para
 
 The confidence interval **for the mean** is computed as:  
 
-$$(\overline{x} - z^* \frac{s}{\sqrt{n}}, ~ \overline{x} + z^* \frac{s}{\sqrt{n}})$$
+$$\bigg(\overline{X} - c \cdot \frac{s}{\sqrt{n}}, ~ \overline{X} + c \cdot \frac{s}{\sqrt{n}}\bigg)$$
 
 * $\overline{x}$ is the sample mean  
-* $s$ is the sample mean  
+* $s$ is the sample standard deviation  
 * $n$ is the sample size  
-* $z^*$ is the critical z-score  
+* $c$ is the critical statistic  
+
+The quantity $c \cdot \frac{s}{\sqrt{n}}$ is called the **margin of error**.  
+
+The critical statistic can either be a Z-score ($Z$) or t-score ($U$), depending on which distribution is used for inference. This statistic is related to the significance level $\alpha$ that was previously set. Recall from Unit 4 that $\alpha$ or the Type I error rate is the probability of rejecting a true $H_0$. Increasing $\alpha$ means increasing the tolerance for making a wrong decision, and so "confidence" in the analysis decreases. This is why the confidence level is computed as $1 - \alpha$. For $\alpha = 0.05$, the confidence level is $1 - 0.05 = 0.95$ or 95%. In computing a 95% CI, the $Z$-score corresponding to the confidence level is used. For example, if $\alpha = 0.05$ and the $Z$-distribution is used, the critical Z-score which we will denote as $z^*$ is the $Z$-score corresponding to 0.95.  
+
+### Interpreting the Confidence Interval  
+
+As an example, consider the mileage problem from the previous section. The sample mean $\overline{X}$ was `r avg` while the sample standard deviation was `r sd_mpg`. The population variance is unknown, so the t-test was used. The critical $t$-score corresponding to $1 - \alpha = 0.95$ is `r round(qt(0.95, 8), 2)`, and the sample size is `r length(mileage)`. Using these information, we can construct a 95% confidence interval for the true average MPG of the car:  
+
+$$
+\begin{align}
+& \bigg(\overline{X} \pm c \cdot \frac{s}{\sqrt{n}} \bigg) \\
+&= \bigg(19 \pm -1.86 \times \frac{1.66}{\sqrt{9}} \bigg)\\
+&= (19 \pm -1.86 \times 0.5533 ) \\
+&= (19 \pm 1.03) \\
+&= (17.97, ~ 20.03)
+\end{align}
+$$
+
+This 95% confidence interval **IS NOT** interpreted as: "There is a 95% chance that the true mean is in this interval." The correct interpretation of a confidence interval is: "95% of *similarly constructed* intervals will contain the true population mean."  
 
 <br>

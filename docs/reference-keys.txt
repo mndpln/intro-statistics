@@ -1,6 +1,6 @@
 fig:unnamed-chunk-16
-fig:unnamed-chunk-25
 fig:unnamed-chunk-26
+fig:unnamed-chunk-27
 introduction-to-data
 what-is-data
 types-of-data
@@ -66,6 +66,12 @@ tests-for-composite-hypotheses
 rejection-regions
 calculating-p-values
 a-two-sample-t-test
+hypothesis-testing-examples
+problem-1
+critical-statistic
+calculating-the-p-value
+problem-2
 confidence-intervals
 what-are-confidence-intervals
 constructing-a-confidence-interval
+interpreting-the-confidence-interval

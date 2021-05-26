@@ -519,14 +519,9 @@ text(x = 0.3, y = 0.1, labels = "do not reject\n null hypothesis")
 text(x = 3, y = 0.1, labels = "reject the\n null hypothesis")
 ```
 
-  
-
 To obtain the p-value, we get the cumulative probability from the cdf $T_{m+n-2}(U)$. Looking at $H_0$, we reject positive values and thus it would make sense to get the area of the right-tail, $1 - T_{m+n-2}(U)$, where a lower probability would mean a very unlikely outcome given the null hypothesis. We get this using the Excel formula `= 1 - T.DIST(-0.971, 10, TRUE)`.  
 
-We calculate the p-value as $`r round(p_value, 2)`$. At significance level $\alpha = 0.05$, we do 
-not reject the null hypothesis. We visualize this below:  
-
-  
+We calculate the p-value as $`r round(p_value, 2)`$. At significance level $\alpha = 0.05$, we do not reject the null hypothesis. We visualize this below:  
 
 ```{r}
 shade.dist(

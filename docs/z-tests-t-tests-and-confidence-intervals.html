@@ -24,7 +24,7 @@
 <meta name="author" content="Mariefel Nicole Deypalan" />
 
 
-<meta name="date" content="2021-05-17" />
+<meta name="date" content="2021-05-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -597,8 +597,7 @@ $$</p>
 <p>Since we are testing for <span class="math inline">\(H_0: \mu_{SM} \leq \mu_{PM}\)</span>, we reject it if the statistic <span class="math inline">\(U \geq c\)</span>, where <span class="math inline">\(c\)</span> is equal to <span class="math inline">\(T^{-1}_{m+n-1}(1-\alpha_0)\)</span>. For <span class="math inline">\(\text{df} = m + n - 2 = 10\)</span>, the <span class="math inline">\(t\)</span>-statistic at <span class="math inline">\(1 - \alpha\)</span> is equal to 1.81. Since <span class="math inline">\(U &lt; c\)</span> we do not reject the null hypothesis.</p>
 <p><img src="intro-statistics_files/figure-html/unnamed-chunk-35-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>To obtain the p-value, we get the cumulative probability from the cdf <span class="math inline">\(T_{m+n-2}(U)\)</span>. Looking at <span class="math inline">\(H_0\)</span>, we reject positive values and thus it would make sense to get the area of the right-tail, <span class="math inline">\(1 - T_{m+n-2}(U)\)</span>, where a lower probability would mean a very unlikely outcome given the null hypothesis. We get this using the Excel formula <code>= 1 - T.DIST(-0.971, 10, TRUE)</code>.</p>
-<p>We calculate the p-value as <span class="math inline">\(0.82\)</span>. At significance level <span class="math inline">\(\alpha = 0.05\)</span>, we do
-not reject the null hypothesis. We visualize this below:</p>
+<p>We calculate the p-value as <span class="math inline">\(0.82\)</span>. At significance level <span class="math inline">\(\alpha = 0.05\)</span>, we do not reject the null hypothesis. We visualize this below:</p>
 <p><img src="intro-statistics_files/figure-html/unnamed-chunk-36-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p><br></p>
 </div>
